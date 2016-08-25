@@ -1,0 +1,17 @@
+// Primary Colors === */
+$orange:	#DC5F13;
+$blue:		#7BA7AE;
+$grey:		#A2A2A2;
+
+// Secondary Colors === */
+$yellow:	#EEDC4F;
+$darkgrey:	#666666;
+$offblue:	#44A6B8;
+$white:		#FFFFFF;
+
+// Fonts === */
+@mixin open-light{font-family:"Open Sans",sans-serif;font-style:normal;font-weight:300;}
+@mixin open-light-it{font-family:"Open Sans",sans-serif;font-style:italic;font-weight:300;}
+@mixin open-reg{font-family:"Open Sans",sans-serif;font-style:normal;font-weight:400;}
+@mixin open-semi{font-family:"Open Sans",sans-serif;font-style:normal;font-weight:600;}
+@mixin open-bld{font-family:"Open Sans",sans-serif;font-style:normal;font-weight:700;}

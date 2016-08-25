@@ -1,0 +1,273 @@
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* ================== */
+/* === TYPOGRAPHY === */
+/* ================== */
+/* line 5, ../scss/smacss/_base.scss */
+h1 {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 44px;
+  color: #FFFFFF;
+}
+
+/* line 6, ../scss/smacss/_base.scss */
+p {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #666666;
+}
+
+/* line 7, ../scss/smacss/_base.scss */
+.title {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+/* line 8, ../scss/smacss/_base.scss */
+a {
+  text-decoration: none;
+}
+
+/* ================== */
+/* === BUTTONS ====== */
+/* ================== */
+/* line 14, ../scss/smacss/_base.scss */
+.main-btn {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  background-color: #DC5F13;
+  padding: 8px 40px;
+  border-radius: 15px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+}
+/* line 15, ../scss/smacss/_base.scss */
+.main-btn:hover {
+  background-color: #666666;
+}
+
+/* ============== */
+/* === INPUTS === */
+/* ============== */
+/* ================== */
+/* === OTHER BASE === */
+/* ================== */
+/* line 26, ../scss/smacss/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 27, ../scss/smacss/_base.scss */
+svg {
+  fill: white;
+}
+
+/* line 28, ../scss/smacss/_base.scss */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #44A6B8;
+  padding: 90px 25px 25px;
+}
+
+/* line 31, ../scss/smacss/_base.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+/* line 32, ../scss/smacss/_base.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 34, ../scss/smacss/_base.scss */
+[v-cloak] {
+  display: none;
+}
+
+/* ==================== */
+/* === SIDEBAR === */
+/* ==================== */
+/* line 5, ../scss/smacss/_layout.scss */
+#sidebar {
+  width: 25%;
+  position: fixed;
+  overflow: scroll;
+  background-color: #FFFFFF;
+  height: calc(100vh - 115px);
+  padding: 50px;
+  border-radius: 8px 0 0 8px;
+  text-align: center;
+}
+/* line 6, ../scss/smacss/_layout.scss */
+#sidebar svg {
+  margin-bottom: 30px;
+}
+/* line 7, ../scss/smacss/_layout.scss */
+#sidebar ol {
+  margin: 0 0 50px 67px;
+  text-align: left;
+}
+/* line 8, ../scss/smacss/_layout.scss */
+#sidebar li {
+  margin-bottom: 12px;
+}
+/* line 9, ../scss/smacss/_layout.scss */
+#sidebar li a {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  opacity: .3;
+  transition: all .2s ease-in-out;
+}
+/* line 10, ../scss/smacss/_layout.scss */
+#sidebar li a span {
+  color: white;
+  background: grey;
+  border-radius: 30px;
+  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  padding: 8px 0;
+}
+/* line 11, ../scss/smacss/_layout.scss */
+#sidebar li a:hover, #sidebar li a.active {
+  opacity: 1;
+  color: #DC5F13;
+}
+/* line 14, ../scss/smacss/_layout.scss */
+#sidebar .progress-btn {
+  display: none;
+}
+/* line 15, ../scss/smacss/_layout.scss */
+#sidebar .progress-btn.visible {
+  display: inline-block;
+}
+
+/* ==================== */
+/* === CONTENT === */
+/* ==================== */
+/* line 23, ../scss/smacss/_layout.scss */
+#content {
+  width: 75%;
+  overflow: scroll;
+  margin-left: 25%;
+  height: calc(100vh - 115px);
+  background: #FFFFFF;
+  padding: 50px;
+  border-radius: 0 8px 8px 0;
+}
+
+/* ==================== */
+/* === PAGE === */
+/* ==================== */
+/* line 29, ../scss/smacss/_layout.scss */
+.page {
+  display: none;
+}
+
+/* ==================== */
+/* === PAGE1 === */
+/* ==================== */
+/* line 5, ../scss/smacss/_modules.scss */
+.page1 {
+  display: block;
+}
+/* line 6, ../scss/smacss/_modules.scss */
+.page1 .illustration {
+  width: 90%;
+  margin-bottom: 50px;
+}
+/* line 7, ../scss/smacss/_modules.scss */
+.page1 p {
+  max-width: 52%;
+  margin: 0 auto 20px;
+}
+
+/* ==================== */
+/* === RECEIPTS === */
+/* ==================== */
+/* ================== */
+/* === HEADER === */
+/* ================== */
