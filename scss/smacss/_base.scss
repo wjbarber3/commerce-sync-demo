@@ -3,6 +3,7 @@
 /* ================== */
 
 h1{@include open-light;font-size:36px;line-height:44px;color:$white;}
+h2{@include open-light-it;font-size:20px;line-height:23px;color:$offgrey;}
 p{@include open-reg;font-size:14px;line-height:19px;color:$darkgrey;}
 .title{position:absolute;top:20px;left:0;right:0;margin:auto;text-align:center;}
 a{text-decoration:none;}
