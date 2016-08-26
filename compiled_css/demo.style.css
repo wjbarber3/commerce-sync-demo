@@ -190,6 +190,7 @@ body {
 #sidebar svg {
   margin-bottom: 30px;
   transition: all .2s ease-in-out;
+  max-width: 100%;
 }
 /* line 7, ../scss/smacss/_layout.scss */
 #sidebar svg:hover {
@@ -307,67 +308,63 @@ body {
   padding: 15px 20px;
 }
 /* line 16, ../scss/smacss/_modules.scss */
+.receipt p {
+  display: inline-block;
+}
+/* line 17, ../scss/smacss/_modules.scss */
 .receipt .receipt-header {
   background-color: #EFEFEF;
   width: 100%;
   padding: 15px 65px;
   text-align: center;
 }
-/* line 17, ../scss/smacss/_modules.scss */
+/* line 18, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels {
   margin-bottom: 25px;
 }
-/* line 18, ../scss/smacss/_modules.scss */
+/* line 19, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels p {
-  display: inline-block;
-  float: left;
   font-size: 11px;
   color: #AAAAAA;
 }
-/* line 19, ../scss/smacss/_modules.scss */
+/* line 20, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels p:last-of-type {
   float: right;
 }
-/* line 22, ../scss/smacss/_modules.scss */
+/* line 23, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales {
   height: 210px;
   border-bottom: 1px solid #EFEFEF;
 }
-/* line 23, ../scss/smacss/_modules.scss */
+/* line 24, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p {
-  display: inline-block;
   margin-right: 15px;
 }
-/* line 24, ../scss/smacss/_modules.scss */
+/* line 25, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p:last-of-type {
   float: right;
   margin-right: 0px;
 }
-/* line 27, ../scss/smacss/_modules.scss */
+/* line 28, ../scss/smacss/_modules.scss */
 .receipt .receipt-sale-row {
   margin-bottom: 20px;
 }
-/* line 28, ../scss/smacss/_modules.scss */
+/* line 29, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals, .receipt .receipt-totals {
   margin: 20px 0;
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 10px;
 }
-/* line 29, ../scss/smacss/_modules.scss */
+/* line 30, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals p, .receipt .receipt-totals p {
-  display: inline-block;
   width: 50%;
   float: left;
   margin-bottom: 5px;
 }
-/* line 30, ../scss/smacss/_modules.scss */
+/* line 31, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals p:nth-of-type(even), .receipt .receipt-totals p:nth-of-type(even) {
   float: right;
   text-align: right;
-}
-/* line 33, ../scss/smacss/_modules.scss */
-.receipt .receipt-card p {
-  display: inline-block;
 }
 /* line 34, ../scss/smacss/_modules.scss */
 .receipt .receipt-card p:last-of-type {

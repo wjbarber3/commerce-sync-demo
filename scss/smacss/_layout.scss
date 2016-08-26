@@ -3,7 +3,7 @@
 /* ==================== */
 
 #sidebar{width:25%;position:fixed;overflow:scroll;background-color:$white;height:calc(100vh - 115px);padding:50px;border-radius:8px 0 0 8px;text-align:center;
-	svg{margin-bottom:30px;transition:all .2s ease-in-out;
+	svg{margin-bottom:30px;transition:all .2s ease-in-out;max-width:100%;
 		&:hover{@include transform(translateY(-2px));}
 	}
 	ol{display:inline-block;text-align:left;margin:0 auto 50px;}
