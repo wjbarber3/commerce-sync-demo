@@ -60,18 +60,6 @@ View = {
 
 /*
 |--------------------------------------------------------------------------
-| Update Receipts
-|--------------------------------------------------------------------------
-| This object houses all functions related user input to the Receipts
-| 
-*/
-
-Receipts = {
-
-}
-
-/*
-|--------------------------------------------------------------------------
 | History Updates
 |--------------------------------------------------------------------------
 | Manipulate the history stack so we can have 'pages'
@@ -86,6 +74,60 @@ Receipts = {
 | 
 */
 
+Vue.component('receipt', {
+	template: '#receipt-template',
+	data: function() {
+		return {
+			tip: 8.50,
+			sale: [
+				{ price: '' },
+				{ desc: '' },
+				{ amount: '' }
+			]
+		};
+	},
+	methods: {
+		addSale: function() {
+			this.sales.push(this.sale);
+		}
+	},
+	computed: {
+		subtotal: function() {
+			let result = 0;
+		  	this.sales.forEach((sale) => result += +sale.price);
+		  	var subtotal = Math.round(100 * result) / 100;
+		  	return subtotal.toFixed(2);
+		},
+		tax: function() {
+			var tax = this.subtotal * .07;
+			return tax.toFixed(2);
+		},
+		total: function() {
+			var total = parseInt(this.subtotal) + parseInt(this.tax);
+			return total;
+		}
+	},
+	props: ['header', 'date', 'sales' ]
+})
+
+var vm = new Vue({
+	el: '#content',
+	data: {
+		sales1: [
+			{amount: 1, desc: 'A book title', price: 13.99},
+			{amount: 3, desc: 'An espresso title', price: 5.00},
+			{amount: 6, desc: 'A drink title', price: 4.25},
+			{amount: 2, desc: 'A pastrt', price: 3.99}
+		],
+		sales2: [
+			{amount: 1, desc: 'A title', price: 9},
+			{amount: 2, desc: 'An title', price: 3},
+			{amount: 3, desc: 'A title', price: 5},
+			{amount: 4, desc: 'A ', price: 99}
+		],
+	}
+})
+
 /*
 |--------------------------------------------------------------------------
 | Init our objects
@@ -94,5 +136,4 @@ Receipts = {
 
 window.onload = function() {
   View.init();
-  // Receipts.init();
 };

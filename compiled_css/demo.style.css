@@ -87,7 +87,7 @@ h2 {
 }
 
 /* line 7, ../scss/smacss/_base.scss */
-p {
+p, input, a {
   font-family: "Open Sans",sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -133,23 +133,26 @@ a {
   background-color: #666666;
 }
 
+/* ========================== */
+/* === VUE TRANSITIONS ====== */
+/* ========================== */
 /* ============== */
 /* === INPUTS === */
 /* ============== */
 /* ================== */
 /* === OTHER BASE === */
 /* ================== */
-/* line 27, ../scss/smacss/_base.scss */
+/* line 34, ../scss/smacss/_base.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 28, ../scss/smacss/_base.scss */
+/* line 35, ../scss/smacss/_base.scss */
 svg {
   fill: white;
 }
 
-/* line 29, ../scss/smacss/_base.scss */
+/* line 36, ../scss/smacss/_base.scss */
 body {
   width: 100vw;
   height: 100vh;
@@ -157,17 +160,17 @@ body {
   padding: 90px 25px 25px;
 }
 
-/* line 32, ../scss/smacss/_base.scss */
+/* line 39, ../scss/smacss/_base.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-/* line 33, ../scss/smacss/_base.scss */
+/* line 40, ../scss/smacss/_base.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 35, ../scss/smacss/_base.scss */
+/* line 42, ../scss/smacss/_base.scss */
 [v-cloak] {
   display: none;
 }
@@ -308,71 +311,110 @@ body {
   padding: 15px 20px;
 }
 /* line 16, ../scss/smacss/_modules.scss */
+.receipt .receipt-body input {
+  width: 38px;
+  padding: 0px;
+  -webkit-appearance: none;
+  border: none;
+  border-bottom: 1px solid #7BA7AE;
+  transition: all .2s ease-in-out;
+  color: #7BA7AE;
+}
+/* line 17, ../scss/smacss/_modules.scss */
+.receipt .receipt-body input::-webkit-inner-spin-button {
+  display: none;
+}
+/* line 18, ../scss/smacss/_modules.scss */
+.receipt .receipt-body input:focus {
+  outline: none;
+  border-bottom: 1px solid #DC5F13;
+  color: #DC5F13;
+}
+/* line 20, ../scss/smacss/_modules.scss */
+.receipt .receipt-body input[type="text"] {
+  width: 100%;
+}
+/* line 22, ../scss/smacss/_modules.scss */
 .receipt p {
   display: inline-block;
 }
-/* line 17, ../scss/smacss/_modules.scss */
+/* line 23, ../scss/smacss/_modules.scss */
 .receipt .receipt-header {
   background-color: #EFEFEF;
   width: 100%;
   padding: 15px 65px;
   text-align: center;
 }
-/* line 18, ../scss/smacss/_modules.scss */
+/* line 24, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels {
   margin-bottom: 25px;
 }
-/* line 19, ../scss/smacss/_modules.scss */
+/* line 25, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels p {
   font-size: 11px;
   color: #AAAAAA;
 }
-/* line 20, ../scss/smacss/_modules.scss */
+/* line 26, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels p:last-of-type {
   float: right;
 }
-/* line 23, ../scss/smacss/_modules.scss */
+/* line 29, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales {
   height: 210px;
   border-bottom: 1px solid #EFEFEF;
 }
-/* line 24, ../scss/smacss/_modules.scss */
+/* line 30, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p {
   margin-right: 15px;
 }
-/* line 25, ../scss/smacss/_modules.scss */
+/* line 31, ../scss/smacss/_modules.scss */
+.receipt .receipt-sales p span {
+  margin-right: 4px;
+}
+/* line 32, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p:last-of-type {
   float: right;
   margin-right: 0px;
 }
-/* line 28, ../scss/smacss/_modules.scss */
+/* line 35, ../scss/smacss/_modules.scss */
 .receipt .receipt-sale-row {
   margin-bottom: 20px;
 }
-/* line 29, ../scss/smacss/_modules.scss */
+/* line 36, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals, .receipt .receipt-totals {
   margin: 20px 0;
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 10px;
 }
-/* line 30, ../scss/smacss/_modules.scss */
+/* line 37, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals p, .receipt .receipt-totals p {
   width: 50%;
   float: left;
   margin-bottom: 5px;
 }
-/* line 31, ../scss/smacss/_modules.scss */
+/* line 38, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals p:nth-of-type(even), .receipt .receipt-totals p:nth-of-type(even) {
   float: right;
   text-align: right;
 }
-/* line 34, ../scss/smacss/_modules.scss */
+/* line 41, ../scss/smacss/_modules.scss */
 .receipt .receipt-card p:last-of-type {
   float: right;
   text-align: right;
   font-family: "Open Sans",sans-serif;
   font-style: normal;
   font-weight: 700;
+}
+/* line 42, ../scss/smacss/_modules.scss */
+.receipt .add-sale {
+  font-size: 10px;
+  background: #7BA7AE;
+  padding: 3px 6px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  margin-top: 4px;
+  display: inline-block;
+  float: left;
 }
 
 /* ================== */

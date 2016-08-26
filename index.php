@@ -45,7 +45,7 @@
 		<!-- === PAGE ONE ========= -->
 		<!-- ====================== -->
 
-		<div class="page page1 current">
+		<div class="page page1">
 			<svg class="illustration" width="303" height="261"><use xlink:href="#illustration"></use></svg>
 			<p>As a small business owner, you know that sometimes there are just not enough hours in the day. The work starts before you walk in the door and wraps up long after the lights go out.</p>
 			<p>From ringing up sales to managing employees, all of the small tasks add up.</p>
@@ -57,65 +57,57 @@
 		<!-- === PAGE TWO ========= -->
 		<!-- ====================== -->
 
-		<div class="page page2">
+		<div class="page page2 current">
+			
+			<!-- Call our custom receipt vue component -->
+			<receipt header="Between the Covers &amp; Grinders Café" date="Sept. 23, 2016 10:52 am" :sales="sales1"></receipt>
+			<receipt header="Between the Covers &amp; Grinders Café" date="Sept. 25, 2016 3:08 pm" :sales="sales2"></receipt>
+
+			<div class="clearfix"></div>
+
+		</div><!--end page2-->
+
+		<template id="receipt-template">
 			<div class="receipt">
 				<div class="receipt-header">
-					<h2>Between the Covers &amp; Grinders Café</h2>
+					<h2>{{ header }}</h2>
 				</div><!--end receipt-header-->
 				<div class="receipt-body">
 					<div class="receipt-labels">
 						<p>Sales</p>
-						<p>Sept. 23, 2016 10:52 am</p>
+						<p>{{ date }}</p>
 						<div class="clearfix"></div>
 					</div><!--end receipt-labels-->
 					<div class="receipt-sales">
-						<div class="receipt-sale-row">
-							<p>1</p>
-							<p>Dante's Inferno</p>
-							<p>$13.99</p>
+						<div class="receipt-sale-row" v-for="sale in sales">
+							<p>{{ sale.amount }}</p>
+							<p><input placeholder="Item Description" type="text" step="0.01" min="0" v-model="sale.desc"></p>
+							<p class="sale-price"><span>$</span><input placeholder="0.00" type="number" step="0.01" min="0" v-model="sale.price"></p>
 						</div><!--end receipt-sale-row-->
-						<div class="receipt-sale-row">
-							<p>1</p>
-							<p>Espresso</p>
-							<p>$5.00</p>
-						</div><!--end receipt-sale-row-->
-						<div class="receipt-sale-row">
-							<p>1</p>
-							<p>The Sun Also Rises</p>
-							<p>$11.99</p>
-						</div><!--end receipt-sale-row-->
-						<div class="receipt-sale-row">
-							<p>1</p>
-							<p>Spanish Coffee</p>
-							<p>$1.99</p>
-						</div><!--end receipt-sale-row-->
+						<a href="#" class="add-sale" v-show="sales.length < 5" @click="addSale"><span>+</span> Add sale</a>
 					</div><!--end receipt-sales-->
 					<div class="receipt-subtotals">
 						<p>Subtotal</p>
-						<p>$32.97</p>
+						<p>${{ subtotal }}</p>
 						<p>Tax</p>
-						<p>$2.64</p>
+						<p>{{ tax }}</p>
 						<div class="clearfix"></div>
 					</div><!--end subtotals-->
 					<div class="receipt-totals">
 						<p>Tip</p>
-						<p>$6.00</p>
+						<p>{{ tip }}</p>
 						<p>Total</p>
-						<p>$41.25</p>
+						<p>{{ total }}</p>
 						<div class="clearfix"></div>
 					</div><!--end totals-->
 					<div class="receipt-card">
 						<p>Visa 1825</p>
-						<p>$41.25</p>
+						<p>{{ total }}</p>
 						<div class="clearfix"></div>
 					</div><!--end card-->
 				</div><!--end receipt-body-->
 			</div><!--end receipt-->
-			<div class="receipt">
-				receipt
-			</div><!--end receipt-->
-			<div class="clearfix"></div>
-		</div><!--end page2-->
+		</template>
 
 		<!-- ====================== -->
 		<!-- === PAGE THREE ======= -->
@@ -123,6 +115,15 @@
 
 		<div class="page page3">
 			<h2>Page 3</h2>
+
+				<!-- <counter heading="Likes"></counter>
+				<counter heading="Dislikes"></counter>
+
+				<template id="counter-template">
+					<h4>{{ heading }}</h4>
+					<button @click="count += 1">{{count}}</button>
+				</template> -->
+
 		</div><!--end page3-->
 
 		<!-- ====================== -->
