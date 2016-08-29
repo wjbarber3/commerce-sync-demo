@@ -232,7 +232,7 @@ body {
   height: 30px;
   display: inline-block;
   text-align: center;
-  padding: 8px 0;
+  padding: 5px 0;
 }
 /* line 13, ../scss/smacss/_layout.scss */
 #sidebar li a:hover, #sidebar li a.active {
@@ -301,10 +301,11 @@ body {
   display: inline-block;
   float: left;
   background-color: #FFFFFF;
-  -moz-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   margin: 20px 0 0 85px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 /* line 15, ../scss/smacss/_modules.scss */
 .receipt .receipt-body {
@@ -316,7 +317,7 @@ body {
   padding: 0px;
   -webkit-appearance: none;
   border: none;
-  border-bottom: 1px solid #7BA7AE;
+  border-bottom: 1px solid #EFEFEF;
   transition: all .2s ease-in-out;
   color: #7BA7AE;
 }
@@ -330,74 +331,86 @@ body {
   border-bottom: 1px solid #DC5F13;
   color: #DC5F13;
 }
-/* line 20, ../scss/smacss/_modules.scss */
+/* line 19, ../scss/smacss/_modules.scss */
 .receipt .receipt-body input[type="text"] {
   width: 100%;
 }
-/* line 22, ../scss/smacss/_modules.scss */
+/* line 20, ../scss/smacss/_modules.scss */
+.receipt .receipt-body input[type="number"] {
+  text-align: right;
+}
+/* line 21, ../scss/smacss/_modules.scss */
+.receipt .receipt-body input:hover {
+  border-bottom: 1px solid #666666;
+}
+/* line 24, ../scss/smacss/_modules.scss */
 .receipt p {
   display: inline-block;
 }
-/* line 23, ../scss/smacss/_modules.scss */
+/* line 25, ../scss/smacss/_modules.scss */
 .receipt .receipt-header {
   background-color: #EFEFEF;
   width: 100%;
   padding: 15px 65px;
   text-align: center;
 }
-/* line 24, ../scss/smacss/_modules.scss */
+/* line 26, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels {
   margin-bottom: 25px;
 }
-/* line 25, ../scss/smacss/_modules.scss */
+/* line 27, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels p {
   font-size: 11px;
   color: #AAAAAA;
 }
-/* line 26, ../scss/smacss/_modules.scss */
+/* line 28, ../scss/smacss/_modules.scss */
 .receipt .receipt-labels p:last-of-type {
   float: right;
 }
-/* line 29, ../scss/smacss/_modules.scss */
+/* line 31, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales {
   height: 210px;
   border-bottom: 1px solid #EFEFEF;
 }
-/* line 30, ../scss/smacss/_modules.scss */
+/* line 32, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p {
   margin-right: 15px;
 }
-/* line 31, ../scss/smacss/_modules.scss */
+/* line 33, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p span {
   margin-right: 4px;
 }
-/* line 32, ../scss/smacss/_modules.scss */
+/* line 34, ../scss/smacss/_modules.scss */
 .receipt .receipt-sales p:last-of-type {
   float: right;
   margin-right: 0px;
 }
-/* line 35, ../scss/smacss/_modules.scss */
+/* line 37, ../scss/smacss/_modules.scss */
 .receipt .receipt-sale-row {
   margin-bottom: 20px;
 }
-/* line 36, ../scss/smacss/_modules.scss */
+/* line 38, ../scss/smacss/_modules.scss */
+.receipt .receipt-sale-row:hover > .remove-sale {
+  display: inline-block;
+}
+/* line 40, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals, .receipt .receipt-totals {
   margin: 20px 0;
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 10px;
 }
-/* line 37, ../scss/smacss/_modules.scss */
+/* line 41, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals p, .receipt .receipt-totals p {
   width: 50%;
   float: left;
   margin-bottom: 5px;
 }
-/* line 38, ../scss/smacss/_modules.scss */
+/* line 42, ../scss/smacss/_modules.scss */
 .receipt .receipt-subtotals p:nth-of-type(even), .receipt .receipt-totals p:nth-of-type(even) {
   float: right;
   text-align: right;
 }
-/* line 41, ../scss/smacss/_modules.scss */
+/* line 45, ../scss/smacss/_modules.scss */
 .receipt .receipt-card p:last-of-type {
   float: right;
   text-align: right;
@@ -405,16 +418,52 @@ body {
   font-style: normal;
   font-weight: 700;
 }
-/* line 42, ../scss/smacss/_modules.scss */
-.receipt .add-sale {
+/* line 46, ../scss/smacss/_modules.scss */
+.receipt .sale-btn {
   font-size: 10px;
-  background: #7BA7AE;
-  padding: 3px 6px;
-  border-radius: 8px;
-  color: #FFFFFF;
-  margin-top: 4px;
+  border: 1px solid #DC5F13;
+  background-color: #FFFFFF;
+  color: #DC5F13;
+  transition: all .2s ease-in-out;
   display: inline-block;
+}
+/* line 47, ../scss/smacss/_modules.scss */
+.receipt .sale-btn:hover {
+  background: #7BA7AE;
+  color: #FFFFFF;
+  border: 1px solid #7BA7AE;
+}
+/* line 49, ../scss/smacss/_modules.scss */
+.receipt .add-sale {
+  padding: 3px 8px;
+  border-radius: 8px;
+  margin-top: 4px;
   float: left;
+  font-size: 12px;
+}
+/* line 50, ../scss/smacss/_modules.scss */
+.receipt .add-sale span {
+  margin-right: 2px;
+}
+/* line 52, ../scss/smacss/_modules.scss */
+.receipt .remove-sale {
+  padding: 1px 3px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 10px;
+  width: 15px;
+  height: 15px;
+  display: none;
+}
+/* line 53, ../scss/smacss/_modules.scss */
+.receipt:hover {
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 /* ================== */

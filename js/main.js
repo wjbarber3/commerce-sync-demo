@@ -6,7 +6,7 @@
 | 
 */
 
-View = {
+Route = {
 	page: '.page',
 	mainLink: '#sidebar li a',
 	progressButton: '.progress-btn',
@@ -48,23 +48,39 @@ View = {
 			$(this.mainLink).removeClass("active");
 			$("#sidebar li a").eq(targetIndex).addClass("active");
 			}
-		console.log(targetIndex);
-		// pageRoute(targetIndex);
+		pageRoute(targetIndex);
 	}
 }
 
-// function pageRoute(i) {
-// 	hashes = ['/step1', '/step2', '/step3'];
-// 	window.history.pushState("", "page 2", hashes[i]);
-// }
+function pageRoute(i) {
+	hashes = ['/run-your-business', '/let-us-work-for-you', '/check-your-books'];
+	window.history.pushState("", "page 2", hashes[i]);
+}
 
 /*
 |--------------------------------------------------------------------------
-| History Updates
+| Route History Updates
 |--------------------------------------------------------------------------
-| Manipulate the history stack so we can have 'pages'
+| Conditional loading based on hisotry manipulation
 | 
 */
+
+Page = {
+	currentPage: '.page.current',
+	path: window.location.pathname,
+	init: function() {
+		if ( this.path === "/run-your-business") {
+			$(this.currentPage).removeClass("current");
+			$('.page2').addClass("current");
+		} else if ( this.path === "/let-us-work-for-you") {
+			$(this.currentPage).removeClass("current");
+			$('.page3').addClass("current");
+		} else if ( this.path === "/check-your-books") {
+			$(this.currentPage).removeClass("current");
+			$('.page4').addClass("current");
+		}
+	}
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -78,17 +94,19 @@ Vue.component('receipt', {
 	template: '#receipt-template',
 	data: function() {
 		return {
-			tip: 8.50,
-			sale: [
-				{ price: '' },
-				{ desc: '' },
-				{ amount: '' }
-			]
+			company: 'Between The Covers & Grinders Cafe',
+			tip: 2.00,
+			grandtotal: ''
 		};
 	},
 	methods: {
 		addSale: function() {
-			this.sales.push(this.sale);
+			this.sales.push(
+				{amount: 1, desc: '', price: 0.00}
+			);
+		},
+		removeSale: function(index) {
+			this.sales.splice(index, 1)
 		}
 	},
 	computed: {
@@ -99,32 +117,39 @@ Vue.component('receipt', {
 		  	return subtotal.toFixed(2);
 		},
 		tax: function() {
-			var tax = this.subtotal * .07;
+			var tax = this.subtotal * .08;
 			return tax.toFixed(2);
 		},
 		total: function() {
-			var total = parseInt(this.subtotal) + parseInt(this.tax);
-			return total;
+			var total = Number(this.subtotal) + Number(this.tax) + Number(this.tip);
+			return total.toFixed(2);
 		}
 	},
-	props: ['header', 'date', 'sales' ]
+	props: ['date', 'sales' ]
 })
 
 var vm = new Vue({
 	el: '#content',
 	data: {
 		sales1: [
-			{amount: 1, desc: 'A book title', price: 13.99},
-			{amount: 3, desc: 'An espresso title', price: 5.00},
-			{amount: 6, desc: 'A drink title', price: 4.25},
-			{amount: 2, desc: 'A pastrt', price: 3.99}
+			{amount: 1, desc: "Dante's Inferno", price: 13.99},
+			{amount: 1, desc: "Espresso", price: 5.25},
+			{amount: 1, desc: "The Sun Also Rises", price: 11.99},
+			{amount: 1, desc: "Spanish Coffee", price: 1.99}
 		],
 		sales2: [
-			{amount: 1, desc: 'A title', price: 9},
-			{amount: 2, desc: 'An title', price: 3},
-			{amount: 3, desc: 'A title', price: 5},
-			{amount: 4, desc: 'A ', price: 99}
-		],
+			{amount: 1, desc: "Huckleberry Finn", price: 14.95},
+			{amount: 1, desc: "Americano", price: 2.29},
+			{amount: 1, desc: "Pride & Prejudice", price: 12.95},
+			{amount: 1, desc: "Black Tea Latte", price: 4.25},
+			{amount: 1, desc: "Scone", price: 3.25}
+		]
+	},
+	computed: {
+		grand: function() {
+			// this.$root.total;
+			// this.$children.total;
+		}
 	}
 })
 
@@ -135,5 +160,6 @@ var vm = new Vue({
 */
 
 window.onload = function() {
-  View.init();
+  Route.init();
+  Page.init();
 };

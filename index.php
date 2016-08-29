@@ -11,6 +11,7 @@
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 	<!-- Load Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="fontawesome/font-awesome.css">
 </head>
 
 <body>
@@ -45,7 +46,7 @@
 		<!-- === PAGE ONE ========= -->
 		<!-- ====================== -->
 
-		<div class="page page1">
+		<div class="page page1 current">
 			<svg class="illustration" width="303" height="261"><use xlink:href="#illustration"></use></svg>
 			<p>As a small business owner, you know that sometimes there are just not enough hours in the day. The work starts before you walk in the door and wraps up long after the lights go out.</p>
 			<p>From ringing up sales to managing employees, all of the small tasks add up.</p>
@@ -57,20 +58,22 @@
 		<!-- === PAGE TWO ========= -->
 		<!-- ====================== -->
 
-		<div class="page page2 current">
+		<div class="page page2">
 			
 			<!-- Call our custom receipt vue component -->
-			<receipt header="Between the Covers &amp; Grinders Café" date="Sept. 23, 2016 10:52 am" :sales="sales1"></receipt>
-			<receipt header="Between the Covers &amp; Grinders Café" date="Sept. 25, 2016 3:08 pm" :sales="sales2"></receipt>
+			<receipt date="Sept. 23, 2016 10:52 am" :sales="sales1"></receipt>
+			<receipt date="Sept. 25, 2016 3:08 pm" :sales="sales2"></receipt>
 
 			<div class="clearfix"></div>
+
+			<!-- <h4>Grandtotal: {{ grand }}</h4> -->
 
 		</div><!--end page2-->
 
 		<template id="receipt-template">
 			<div class="receipt">
 				<div class="receipt-header">
-					<h2>{{ header }}</h2>
+					<h2>{{ company }}</h2>
 				</div><!--end receipt-header-->
 				<div class="receipt-body">
 					<div class="receipt-labels">
@@ -81,28 +84,29 @@
 					<div class="receipt-sales">
 						<div class="receipt-sale-row" v-for="sale in sales">
 							<p>{{ sale.amount }}</p>
-							<p><input placeholder="Item Description" type="text" step="0.01" min="0" v-model="sale.desc"></p>
+							<p><input placeholder="Add Description" type="text" step="0.01" min="0" v-model="sale.desc"></p>
+							<a class="sale-btn remove-sale fa fa-remove" href="#" @click.prevent="removeSale($index)"></a>
 							<p class="sale-price"><span>$</span><input placeholder="0.00" type="number" step="0.01" min="0" v-model="sale.price"></p>
 						</div><!--end receipt-sale-row-->
-						<a href="#" class="add-sale" v-show="sales.length < 5" @click="addSale"><span>+</span> Add sale</a>
+						<a href="#" class="sale-btn add-sale" v-show="sales.length < 5" @click.prevent="addSale"><span class="fa fa-plus-circle"></span> Add sale</a>
 					</div><!--end receipt-sales-->
 					<div class="receipt-subtotals">
 						<p>Subtotal</p>
 						<p>${{ subtotal }}</p>
 						<p>Tax</p>
-						<p>{{ tax }}</p>
+						<p>${{ tax }}</p>
 						<div class="clearfix"></div>
 					</div><!--end subtotals-->
 					<div class="receipt-totals">
 						<p>Tip</p>
-						<p>{{ tip }}</p>
+						<p>$<input placeholder="0.00" type="number" step="1" min="0" v-model="tip"></p>
 						<p>Total</p>
-						<p>{{ total }}</p>
+						<p>${{ total }}</p>
 						<div class="clearfix"></div>
 					</div><!--end totals-->
 					<div class="receipt-card">
 						<p>Visa 1825</p>
-						<p>{{ total }}</p>
+						<p>${{ total }}</p>
 						<div class="clearfix"></div>
 					</div><!--end card-->
 				</div><!--end receipt-body-->
