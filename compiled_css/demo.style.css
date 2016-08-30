@@ -429,9 +429,10 @@ body {
 }
 /* line 47, ../scss/smacss/_modules.scss */
 .receipt .sale-btn:hover {
-  background: #7BA7AE;
+  background: #EFEFEF;
   color: #FFFFFF;
   border: 1px solid #7BA7AE;
+  color: #7BA7AE;
 }
 /* line 49, ../scss/smacss/_modules.scss */
 .receipt .add-sale {
@@ -467,5 +468,80 @@ body {
 }
 
 /* ================== */
-/* === HEADER === */
+/* === LAYOUT === */
 /* ================== */
+@media (max-width: 1300px) {
+  /* line 5, ../scss/smacss/_states.scss */
+  #sidebar {
+    padding: 35px;
+  }
+}
+@media (max-width: 978px) {
+  /* line 5, ../scss/smacss/_states.scss */
+  #sidebar {
+    width: 33%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 5, ../scss/smacss/_states.scss */
+  #sidebar {
+    width: 100%;
+    display: block;
+    position: relative;
+    border-radius: 8px 8px 0 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 1300px) {
+  /* line 11, ../scss/smacss/_states.scss */
+  #content {
+    padding: 35px;
+  }
+}
+@media (max-width: 978px) {
+  /* line 11, ../scss/smacss/_states.scss */
+  #content {
+    margin-left: 33%;
+    width: 67%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 11, ../scss/smacss/_states.scss */
+  #content {
+    border-radius: 0 0 8px 8px;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ================== */
+/* === MODULES === */
+/* ================== */
+@media (max-width: 1300px) {
+  /* line 21, ../scss/smacss/_states.scss */
+  .receipt {
+    margin-left: 60px;
+    width: 40%;
+  }
+}
+@media (max-width: 1100px) {
+  /* line 21, ../scss/smacss/_states.scss */
+  .receipt {
+    margin-left: 30px;
+    width: 45%;
+  }
+}
+@media (max-width: 978px) {
+  /* line 21, ../scss/smacss/_states.scss */
+  .receipt {
+    width: 95%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 21, ../scss/smacss/_states.scss */
+  .receipt {
+    margin-left: 0;
+    width: 100%;
+  }
+}

@@ -10,6 +10,10 @@ Route = {
 	page: '.page',
 	mainLink: '#sidebar li a',
 	progressButton: '.progress-btn',
+	pageRoute: function(i) {
+		hashes = ['/run-your-business', '/let-us-work-for-you', '/check-your-books'];
+		window.history.pushState("", "page", hashes[i]);
+	},
 	init: function() {
 		$(this.mainLink).click(this.showView.bind(this));
 		$(this.mainLink).click(this.activeNav.bind(this));
@@ -48,13 +52,8 @@ Route = {
 			$(this.mainLink).removeClass("active");
 			$("#sidebar li a").eq(targetIndex).addClass("active");
 			}
-		pageRoute(targetIndex);
+		this.pageRoute(targetIndex);
 	}
-}
-
-function pageRoute(i) {
-	hashes = ['/run-your-business', '/let-us-work-for-you', '/check-your-books'];
-	window.history.pushState("", "page 2", hashes[i]);
 }
 
 /*
@@ -68,16 +67,23 @@ function pageRoute(i) {
 Page = {
 	currentPage: '.page.current',
 	path: window.location.pathname,
+	navLink: '#sidebar li a',
 	init: function() {
 		if ( this.path === "/run-your-business") {
 			$(this.currentPage).removeClass("current");
 			$('.page2').addClass("current");
+			$(this.navLink).removeClass("active");
+			$(this.navLink).eq(0).addClass("active");
 		} else if ( this.path === "/let-us-work-for-you") {
 			$(this.currentPage).removeClass("current");
 			$('.page3').addClass("current");
+			$(this.navLink).removeClass("active");
+			$(this.navLink).eq(1).addClass("active");
 		} else if ( this.path === "/check-your-books") {
 			$(this.currentPage).removeClass("current");
 			$('.page4').addClass("current");
+			$(this.navLink).removeClass("active");
+			$(this.navLink).eq(2).addClass("active");
 		}
 	}
 }
@@ -95,7 +101,7 @@ Vue.component('receipt', {
 	data: function() {
 		return {
 			company: 'Between The Covers & Grinders Cafe',
-			tip: 2.00,
+			tip: '',
 			grandtotal: ''
 		};
 	},
@@ -110,23 +116,39 @@ Vue.component('receipt', {
 		}
 	},
 	computed: {
-		subtotal: function() {
-			let result = 0;
-		  	this.sales.forEach((sale) => result += +sale.price);
-		  	var subtotal = Math.round(100 * result) / 100;
-		  	return subtotal.toFixed(2);
+		subtotal: function subtotal() {
+			var result = 0;
+			this.sales.forEach(function (sale) {
+				return result += +sale.price;
+			});
+			var subtotal = Math.round(100 * result) / 100;
+			return subtotal.toFixed(2);
 		},
-		tax: function() {
+		tax: function tax() {
 			var tax = this.subtotal * .08;
 			return tax.toFixed(2);
 		},
-		total: function() {
+		total: function total() {
 			var total = Number(this.subtotal) + Number(this.tax) + Number(this.tip);
 			return total.toFixed(2);
 		}
 	},
 	props: ['date', 'sales' ]
 })
+
+// Vue.component('summary', {
+// 	template: '#summary-template',
+// 	data: function() {
+// 		return
+// 	},
+// 	methods: {
+
+// 	},
+// 	computed: {
+
+// 	},
+// 	props: []
+// })
 
 var vm = new Vue({
 	el: '#content',

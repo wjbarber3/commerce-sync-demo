@@ -1,3 +1,26 @@
 /* ================== */
-/* === HEADER === */
+/* === LAYOUT === */
 /* ================== */
+
+#sidebar{
+	@include bp(large){padding:35px;}
+	@include bp(sm-tablet){width:33%;}
+	@include bp(mobile){width:100%;display:block;position:relative;border-radius:8px 8px 0 0;height:auto;}
+}
+
+#content{
+	@include bp(large){padding:35px;}
+	@include bp(sm-tablet){margin-left:33%;width:67%;}
+	@include bp(mobile){border-radius:0 0 8px 8px;margin-left:0;width:100%;}
+}
+
+/* ================== */
+/* === MODULES === */
+/* ================== */
+
+.receipt{
+	@include bp(large){margin-left:60px;width:40%;}
+	@include bp(medium){margin-left:30px;width:45%;}
+	@include bp(sm-tablet){width:95%;}
+	@include bp(mobile){margin-left:0;width:100%;}
+}
