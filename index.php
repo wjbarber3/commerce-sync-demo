@@ -9,7 +9,6 @@
 	<title>Commerce Sync Demo</title>
 	<link rel="stylesheet" href="compiled_css/demo.style.css">
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<!-- Load Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="fontawesome/font-awesome.min.css">
 </head>
@@ -120,10 +119,12 @@
 		<div class="page page3">
 
 			<div class="summary">
+
 				<div class="summary-heading">
 					<h3>{{ company }}</h3>
 					<h3>Daily Summary: Sales <?php echo date("Md"); ?><i class="fa fa-question-circle-o"></i></h3>
 				</div><!--end summary-heading-->
+
 				<div class="summary-top">
 					<input class="dummy-dropdown" type="text" disabled placeholder="Customer">
 					<input type="text" disabled placeholder="<?php echo date('m/d/y') ?>"><i class="fa fa-calendar"></i>
@@ -133,55 +134,68 @@
 					</div><!--end amount-->
 					<div class="clearfix"></div>
 				</div><!--end summary-top-->
+
+				<table class="two-col">
+					<tr>
+						<th>Description</th>
+						<th class="right">Amount</th>
+					</tr>
+					<tr>
+						<td>Taxable Sales</td>
+						<td class="right">$76.81</td>
+					</tr>
+					<tr>
+						<td>Total Tips</td>
+						<td class="right">$6.00</td>
+					</tr>
+					<tr>
+						<td>Refunds<i class="fa fa-info circle"></i></td>
+						<td class="right">$0.00</td>
+					</tr>
+					<tr>
+						<td>Discounts<i class="fa fa-info circle"></i></td>
+						<td class="right">$0.00</td>
+					</tr>
+				</table>
+
 				<div class="summary-body">
-					<div class="summary-body-row">
-						<div class="summary-row-description">
-							<h3>Description<h3>
-						</div><!--end summary-row-description-->
-						<div class="summary-row-amount">
-							<p>Amount</p>
-						</div><!--end summary-row-amount-->
-						<div class="clearfix"></div>
-					</div><!--end summary-body-row-->
-					<div class="summary-body-row">
-						<div class="summary-row-description">
-							<h3>Taxable Sales</h3>
-						</div><!--end summary-row-description-->
-						<div class="summary-row-amount">
-							<p>$76.81</p>
-						</div><!--end summary-row-amount-->
-						<div class="clearfix"></div>
-					</div><!--end summary-body-row-->
-					<div class="summary-body-row">
-						<div class="summary-row-description">
-							<h3>Total Tips</h3>
-						</div><!--end summary-row-description-->
-						<div class="summary-row-amount">
-							<p>$6.00</p>
-						</div><!--end summary-row-amount-->
-						<div class="clearfix"></div>
-					</div><!--end summary-body-row-->
-					<div class="summary-body-row">
-						<div class="summary-row-description">
-							<h3>Refunds</h3><i class="fa fa-info"></i>
-						</div><!--end summary-row-description-->
-						<div class="summary-row-amount">
-							<p>$0.00</p>
-						</div><!--end summary-row-amount-->
-						<div class="clearfix"></div>
-					</div><!--end summary-body-row-->
-					<div class="summary-body-row">
-						<div class="summary-row-description">
-							<h3>Discounts</h3><i class="fa fa-info"></i>
-						</div><!--end summary-row-description-->
-						<div class="summary-row-amount">
-							<p>$0.00</p>
-						</div><!--end summary-row-amount-->
-						<div class="clearfix"></div>
-					</div><!--end summary-body-row-->
-				</div><!--end summary-middle-->
-				<div class="summary-bottom">
-				</div><!--end summary-bottom-->
+					<div class="memo">
+						<label for="memo">Memo</label>
+						<textarea id="memo" disabled></textarea>
+					</div><!--end memo-->
+					<div class="summary-totals">
+						<h3><span>Subtotal:</span> $76.66</h3>
+						<input class="dummy-dropdown" type="text" disabled placeholder="Denver 8.0%">
+						<h3>$5.65</h3>
+						<div class="clearfix separator"></div>
+						<h3><span>Total:</span> $82.41</h3>
+					</div><!--end summary-totals-->
+					<div class="clearfix"></div>
+				</div><!--end summary-body-->
+
+				<table class="three-col">
+					<tr>
+						<th class="lower"><i class="fa fa-caret-down"></i><span>Payment Summary: </span>3 Payments</th>
+						<th></th>
+						<th class="right lower"><span>Due: </span>$0.00</th>
+					</tr>
+					<tr>
+						<td>Credit Card</td>
+						<td>Undeposited Funds</td>
+						<td class="right">$82.31</td>
+					</tr>
+					<tr>
+						<td>Cash</td>
+						<td>Cash Payments</td>
+						<td class="right">$0.00</td>
+					</tr>
+					<tr>
+						<td>Check</td>
+						<td>Check Payments</td>
+						<td class="right">$0.00</td>
+					</tr>
+				</table>
+
 			</div><!--end summary-->
 
 		</div><!--end page3-->

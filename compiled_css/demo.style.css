@@ -97,7 +97,17 @@ h3 {
 }
 
 /* line 8, ../scss/smacss/_base.scss */
-p, input, a {
+h4 {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #7BA7AE;
+}
+
+/* line 9, ../scss/smacss/_base.scss */
+p, input, a, label, td, th {
   font-family: "Open Sans",sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -106,7 +116,7 @@ p, input, a {
   color: #666666;
 }
 
-/* line 9, ../scss/smacss/_base.scss */
+/* line 10, ../scss/smacss/_base.scss */
 .title {
   position: absolute;
   top: 20px;
@@ -116,7 +126,7 @@ p, input, a {
   text-align: center;
 }
 
-/* line 10, ../scss/smacss/_base.scss */
+/* line 11, ../scss/smacss/_base.scss */
 a {
   text-decoration: none;
 }
@@ -124,7 +134,7 @@ a {
 /* ================== */
 /* === BUTTONS ====== */
 /* ================== */
-/* line 16, ../scss/smacss/_base.scss */
+/* line 17, ../scss/smacss/_base.scss */
 .main-btn {
   font-family: "Open Sans",sans-serif;
   font-style: normal;
@@ -138,40 +148,38 @@ a {
   display: inline-block;
   transition: all .2s ease-in-out;
 }
-/* line 17, ../scss/smacss/_base.scss */
+/* line 18, ../scss/smacss/_base.scss */
 .main-btn:hover {
   background-color: #666666;
 }
 
-/* ========================== */
-/* === VUE TRANSITIONS ====== */
-/* ========================== */
 /* ============== */
 /* === INPUTS === */
 /* ============== */
-/* line 31, ../scss/smacss/_base.scss */
-input {
+/* line 25, ../scss/smacss/_base.scss */
+input, textarea {
   -webkit-appearance: none;
+  resize: none;
 }
-/* line 32, ../scss/smacss/_base.scss */
-input:disabled {
+/* line 26, ../scss/smacss/_base.scss */
+input:disabled, textarea:disabled {
   cursor: not-allowed;
 }
 
 /* ================== */
 /* === OTHER BASE === */
 /* ================== */
-/* line 39, ../scss/smacss/_base.scss */
+/* line 33, ../scss/smacss/_base.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 40, ../scss/smacss/_base.scss */
+/* line 34, ../scss/smacss/_base.scss */
 svg {
   fill: white;
 }
 
-/* line 41, ../scss/smacss/_base.scss */
+/* line 35, ../scss/smacss/_base.scss */
 body {
   width: 100vw;
   height: 100vh;
@@ -179,17 +187,17 @@ body {
   padding: 90px 25px 25px;
 }
 
-/* line 44, ../scss/smacss/_base.scss */
+/* line 38, ../scss/smacss/_base.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-/* line 45, ../scss/smacss/_base.scss */
+/* line 39, ../scss/smacss/_base.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 47, ../scss/smacss/_base.scss */
+/* line 41, ../scss/smacss/_base.scss */
 [v-cloak] {
   display: none;
 }
@@ -495,6 +503,7 @@ body {
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding-bottom: 25px;
 }
 /* line 61, ../scss/smacss/_modules.scss */
 .summary .summary-heading {
@@ -529,6 +538,7 @@ body {
 /* line 69, ../scss/smacss/_modules.scss */
 .summary .summary-top i {
   color: #A2A2A2;
+  font-size: 22px;
 }
 /* line 70, ../scss/smacss/_modules.scss */
 .summary .summary-top .amount {
@@ -548,62 +558,62 @@ body {
 }
 /* line 76, ../scss/smacss/_modules.scss */
 .summary .summary-body {
-  padding: 25px;
+  padding: 0 25px;
   background-color: #FFFFFF;
+  display: block;
 }
 /* line 77, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-body-row {
-  border-bottom: 1px solid #EFEFEF;
+.summary .summary-body .memo {
+  width: 70%;
 }
 /* line 78, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-body-row:first-of-type {
-  background-color: #F5FAFB;
+.summary .summary-body .summary-totals {
+  width: 30%;
+  padding-left: 40px;
+  text-align: right;
+  padding-right: 15px;
 }
 /* line 79, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-body-row:first-of-type h3, .summary .summary-body .summary-body-row:first-of-type p {
-  color: #7BA7AE;
-  text-transform: uppercase;
+.summary .summary-body .summary-totals input {
+  width: 70%;
+  float: left;
+  font-size: 14px;
+}
+/* line 80, ../scss/smacss/_modules.scss */
+.summary .summary-body .summary-totals .separator {
+  border-top: 1px solid #EFEFEF;
+  margin: 12px 0 15px;
 }
 /* line 81, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-body-row h3, .summary .summary-body .summary-body-row p {
-  color: #A2A2A2;
-  display: inline-block;
+.summary .summary-body .summary-totals h3 {
+  color: #666666;
+  font-size: 20px;
+  margin-top: 31px;
 }
 /* line 82, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-body-row i {
-  color: #7BA7AE;
-  border: 1px solid #7BA7AE;
-  display: inline-block;
-  margin-left: 8px;
-  border-radius: 15px;
-  font-size: 10px;
-  text-align: center;
-  width: 15px;
-  height: 15px;
-  vertical-align: middle;
-  padding: 1px;
+.summary .summary-body .summary-totals h3:first-of-type {
+  margin-bottom: 14px;
+  margin-top: 0px;
 }
-/* line 84, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-row-description {
-  display: inline-block;
-  width: 90%;
-  float: left;
-  border-right: 1px solid #EFEFEF;
-  padding: 10px 15px;
+/* line 83, ../scss/smacss/_modules.scss */
+.summary .summary-body .summary-totals h3:last-of-type {
+  margin-top: 4px;
 }
 /* line 85, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-row-amount {
+.summary .summary-body .summary-totals span {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+}
+/* line 87, ../scss/smacss/_modules.scss */
+.summary .summary-body .memo, .summary .summary-body .summary-totals {
   display: inline-block;
-  width: 10%;
   float: left;
-  padding: 10px 15px;
+  margin-top: 25px;
 }
-/* line 86, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-row-amount p {
-  text-align: right;
-}
-/* line 90, ../scss/smacss/_modules.scss */
-.summary input {
+/* line 89, ../scss/smacss/_modules.scss */
+.summary input, .summary textarea {
   padding: 8px 12px;
   border: 1px solid #EFEFEF;
   font-size: 16px;
@@ -613,12 +623,119 @@ body {
   font-weight: 300;
   width: auto;
 }
-/* line 91, ../scss/smacss/_modules.scss */
+/* line 90, ../scss/smacss/_modules.scss */
 .summary input.dummy-dropdown {
   background-image: url("/img/drop-arrow.png");
   background-repeat: no-repeat;
   background-size: 36px 100%;
   background-position: 100%;
+}
+/* line 91, ../scss/smacss/_modules.scss */
+.summary label, .summary textarea {
+  display: block;
+  width: 100%;
+  color: #A2A2A2;
+}
+
+/* ==================== */
+/* === TABLES === */
+/* ==================== */
+/* line 98, ../scss/smacss/_modules.scss */
+table {
+  padding: 25px 25px 0;
+  background-color: #FFFFFF;
+  display: block;
+  display: table;
+  width: 100%;
+  border-collapse: inherit;
+}
+/* line 99, ../scss/smacss/_modules.scss */
+table tbody {
+  width: 100%;
+}
+/* line 100, ../scss/smacss/_modules.scss */
+table th {
+  border-top: 1px solid #EFEFEF;
+  background-color: #F5FAFB;
+  padding: 10px 15px;
+  color: #7BA7AE;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+/* line 101, ../scss/smacss/_modules.scss */
+table th.lower {
+  text-transform: none;
+}
+/* line 103, ../scss/smacss/_modules.scss */
+table td {
+  padding: 10px 15px;
+  color: #A2A2A2;
+}
+/* line 104, ../scss/smacss/_modules.scss */
+table td span {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+/* line 106, ../scss/smacss/_modules.scss */
+table th, table td {
+  border-bottom: 1px solid #EFEFEF;
+}
+/* line 107, ../scss/smacss/_modules.scss */
+table .right {
+  text-align: right;
+}
+/* line 108, ../scss/smacss/_modules.scss */
+table i {
+  color: #7BA7AE;
+  display: inline-block;
+  text-align: center;
+  font-size: 15px !important;
+  margin-right: 8px;
+}
+/* line 109, ../scss/smacss/_modules.scss */
+table i.circle {
+  border: 1px solid #7BA7AE;
+  margin-left: 8px;
+  border-radius: 15px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  padding: 1px;
+  font-size: 10px !important;
+}
+/* line 112, ../scss/smacss/_modules.scss */
+table.two-col th, table.two-col td {
+  width: 90%;
+  border-left: 1px solid #EFEFEF;
+}
+/* line 113, ../scss/smacss/_modules.scss */
+table.two-col th + th, table.two-col td + td {
+  width: 10%;
+  border-right: 1px solid #EFEFEF;
+}
+/* line 116, ../scss/smacss/_modules.scss */
+table.three-col th {
+  border-left: 1px solid #EFEFEF;
+}
+/* line 117, ../scss/smacss/_modules.scss */
+table.three-col th + th {
+  border-right: 1px solid #EFEFEF;
+}
+/* line 118, ../scss/smacss/_modules.scss */
+table.three-col td {
+  width: 34%;
+  border-left: 1px solid #EFEFEF;
+}
+/* line 119, ../scss/smacss/_modules.scss */
+table.three-col td + td {
+  width: 50%;
+  border-right: 1px solid #EFEFEF;
+}
+/* line 120, ../scss/smacss/_modules.scss */
+table.three-col td + td + td {
+  width: 16%;
+  border-right: 1px solid #EFEFEF;
 }
 
 /* ================== */
