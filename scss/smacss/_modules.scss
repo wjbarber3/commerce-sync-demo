@@ -13,7 +13,7 @@
 
 .receipt{width:35%;display:inline-block;float:left;background-color:$white;@include box-shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));margin:20px 0 0 85px;transition:all 0.3s cubic-bezier(.25,.8,.25,1);
 	.receipt-body{padding:15px 20px;
-		input{width:38px;padding:0px;-webkit-appearance:none;border:none;border-bottom:1px solid $lightgrey;transition:all .2s ease-in-out;color:$blue;
+		input{width:38px;padding:0px;border:none;border-bottom:1px solid $lightgrey;transition:all .2s ease-in-out;color:$blue;
 			&::-webkit-inner-spin-button{display:none;}
 			&:focus{outline:none;border-bottom:1px solid $orange;color:$orange;}
 			&[type="text"]{width:100%;}
@@ -43,12 +43,50 @@
 		}
 	}
 	.receipt-card p:last-of-type{float:right;text-align:right;@include open-bld;}
-	.sale-btn{font-size:10px;border:1px solid $orange;background-color:$white;color:$orange;transition:all .2s ease-in-out;display:inline-block;
-		&:hover{background:$lightgrey;color:$white;border:1px solid $blue;color:$blue;}
+	.sale-btn{font-size:10px;transition:all .2s ease-in-out;display:inline-block;background:$lightgrey;border:1px solid $blue;color:$blue;
+		&:hover{border:1px solid $orange;background-color:$white;color:$orange;}
 	}
-	.add-sale{padding:3px 8px;border-radius:8px;margin-top:4px;float:left;font-size:12px;
+	.add-sale{padding:3px 8px;border-radius:8px;margin-top:4px;float:left;font-size:12px;width:100%;text-align:center;
 		span{margin-right:2px;}
 	}
 	.remove-sale{padding:1px 3px;border-radius:15px;text-align:center;line-height:10px;width:15px;height:15px;display:none;}
 	&:hover{@include transform(translateY(-1px)); @include box-shadow(0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23));}
+}
+
+/* ==================== */
+/* === SUMMARY === */
+/* ==================== */
+
+.summary{width:100%;@include box-shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));
+	.summary-heading{padding:25px;background-color:$darkgrey;
+		h3{display:inline-block;
+			&:last-of-type{float:right;}
+			i{padding-left:10px;border-left:1px solid white;margin-left:10px;font-size:18px;}
+		}
+	}
+	.summary-top{padding:8px 25px;background-color:$lightblue;border-bottom:1px solid $lightgrey;
+		input{margin-top:7px;}
+		i{color:$grey;}
+		.amount{float:right;text-align:center;
+			p{display:block;color:$grey;
+				&:last-of-type{font-size:28px;color:$darkgrey;line-height:32px;}
+			}
+		}
+	}
+	.summary-body{padding:25px;background-color:$white;
+		.summary-body-row{border-bottom:1px solid $lightgrey;
+			&:first-of-type{background-color:$lightblue;
+				h3,p{color:$blue;text-transform:uppercase;}
+			}
+			h3,p{color:$grey;display:inline-block;}
+			i{color:$blue;border:1px solid $blue;display:inline-block;margin-left:8px;border-radius:15px;font-size:10px;text-align:center;width:15px;height:15px;vertical-align:middle;padding: 1px;}
+		}
+		.summary-row-description{display:inline-block;width:90%;float:left;border-right:1px solid $lightgrey;padding:10px 15px;}
+		.summary-row-amount{display:inline-block;width:10%;float:left;padding:10px 15px;
+			p{text-align:right;}
+		}
+	}
+	.summary-bottom{}
+	input{padding:8px 12px;border:1px solid $lightgrey;font-size:16px;margin-right:8px;@include open-light;width:auto;}
+	input.dummy-dropdown{background-image:url('/img/drop-arrow.png');background-repeat:no-repeat;background-size:36px 100%;background-position:100%;}
 }

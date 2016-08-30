@@ -11,7 +11,7 @@
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 	<!-- Load Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
-	<link rel="stylesheet" href="fontawesome/font-awesome.css">
+	<link rel="stylesheet" href="fontawesome/font-awesome.min.css">
 </head>
 
 <body>
@@ -61,8 +61,8 @@
 		<div class="page page2">
 			
 			<!-- Call our custom receipt vue component -->
-			<receipt date="Sept. 23, 2016 10:52 am" :sales="sales1"></receipt>
-			<receipt date="Sept. 25, 2016 3:08 pm" :sales="sales2"></receipt>
+			<receipt date="Sept. 23, 2016 10:52 am" :sales="sales1" :header="company"></receipt>
+			<receipt date="Sept. 25, 2016 3:08 pm" :sales="sales2" :header="company"></receipt>
 
 			<div class="clearfix"></div>
 
@@ -73,7 +73,7 @@
 		<template id="receipt-template">
 			<div class="receipt">
 				<div class="receipt-header">
-					<h2>{{ company }}</h2>
+					<h2>{{ header }}</h2>
 				</div><!--end receipt-header-->
 				<div class="receipt-body">
 					<div class="receipt-labels">
@@ -118,15 +118,71 @@
 		<!-- ====================== -->
 
 		<div class="page page3">
-			<h2>Page 3</h2>
 
-				<!-- <counter heading="Likes"></counter>
-				<counter heading="Dislikes"></counter>
-
-				<template id="counter-template">
-					<h4>{{ heading }}</h4>
-					<button @click="count += 1">{{count}}</button>
-				</template> -->
+			<div class="summary">
+				<div class="summary-heading">
+					<h3>{{ company }}</h3>
+					<h3>Daily Summary: Sales <?php echo date("Md"); ?><i class="fa fa-question-circle-o"></i></h3>
+				</div><!--end summary-heading-->
+				<div class="summary-top">
+					<input class="dummy-dropdown" type="text" disabled placeholder="Customer">
+					<input type="text" disabled placeholder="<?php echo date('m/d/y') ?>"><i class="fa fa-calendar"></i>
+					<div class="amount">
+						<p>Amount Paid</p>
+						<p>$82.31</p>
+					</div><!--end amount-->
+					<div class="clearfix"></div>
+				</div><!--end summary-top-->
+				<div class="summary-body">
+					<div class="summary-body-row">
+						<div class="summary-row-description">
+							<h3>Description<h3>
+						</div><!--end summary-row-description-->
+						<div class="summary-row-amount">
+							<p>Amount</p>
+						</div><!--end summary-row-amount-->
+						<div class="clearfix"></div>
+					</div><!--end summary-body-row-->
+					<div class="summary-body-row">
+						<div class="summary-row-description">
+							<h3>Taxable Sales</h3>
+						</div><!--end summary-row-description-->
+						<div class="summary-row-amount">
+							<p>$76.81</p>
+						</div><!--end summary-row-amount-->
+						<div class="clearfix"></div>
+					</div><!--end summary-body-row-->
+					<div class="summary-body-row">
+						<div class="summary-row-description">
+							<h3>Total Tips</h3>
+						</div><!--end summary-row-description-->
+						<div class="summary-row-amount">
+							<p>$6.00</p>
+						</div><!--end summary-row-amount-->
+						<div class="clearfix"></div>
+					</div><!--end summary-body-row-->
+					<div class="summary-body-row">
+						<div class="summary-row-description">
+							<h3>Refunds</h3><i class="fa fa-info"></i>
+						</div><!--end summary-row-description-->
+						<div class="summary-row-amount">
+							<p>$0.00</p>
+						</div><!--end summary-row-amount-->
+						<div class="clearfix"></div>
+					</div><!--end summary-body-row-->
+					<div class="summary-body-row">
+						<div class="summary-row-description">
+							<h3>Discounts</h3><i class="fa fa-info"></i>
+						</div><!--end summary-row-description-->
+						<div class="summary-row-amount">
+							<p>$0.00</p>
+						</div><!--end summary-row-amount-->
+						<div class="clearfix"></div>
+					</div><!--end summary-body-row-->
+				</div><!--end summary-middle-->
+				<div class="summary-bottom">
+				</div><!--end summary-bottom-->
+			</div><!--end summary-->
 
 		</div><!--end page3-->
 

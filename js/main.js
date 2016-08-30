@@ -15,26 +15,22 @@ Route = {
 		window.history.pushState("", "page", hashes[i]);
 	},
 	init: function() {
-		$(this.mainLink).click(this.showView.bind(this));
 		$(this.mainLink).click(this.activeNav.bind(this));
 		$(this.progressButton).click(this.sidebarButton.bind(this));
-	},
-	showView: function(e) {
-		e.preventDefault();
-		var target = $(e.target),
-			targetIndex = target.index(this.mainLink),
-			pageToTarget = targetIndex + 2;
-		$(this.page).removeClass("current").fadeOut('fast').promise().done(function() {
-			$('.page' + pageToTarget).fadeIn().addClass("current");
-		});
 	},
 	activeNav: function(e) {
 		$(this.mainLink).removeClass("active");
 		e.preventDefault();
-		$(e.target).addClass("active");
-		var targetIndex = $(e.target).index(this.mainLink)
+		var target = $(e.target),
+			targetIndex = target.index(this.mainLink),
+			pageToTarget = targetIndex + 2;
+		target.addClass("active");
 		$(".progress-btn").removeClass("visible");
 		$(".progress-btn").eq(targetIndex + 1).addClass("visible");
+		$(this.page).removeClass("current").fadeOut('fast').promise().done(function() {
+			$('.page' + pageToTarget).fadeIn().addClass("current");
+		});
+		this.pageRoute(targetIndex);
 	},
 	sidebarButton: function(e) {
 		e.preventDefault();
@@ -100,7 +96,6 @@ Vue.component('receipt', {
 	template: '#receipt-template',
 	data: function() {
 		return {
-			company: 'Between The Covers & Grinders Cafe',
 			tip: '',
 			grandtotal: ''
 		};
@@ -133,7 +128,7 @@ Vue.component('receipt', {
 			return total.toFixed(2);
 		}
 	},
-	props: ['date', 'sales' ]
+	props: [ 'header', 'date', 'sales' ]
 })
 
 // Vue.component('summary', {
@@ -165,7 +160,8 @@ var vm = new Vue({
 			{amount: 1, desc: "Pride & Prejudice", price: 12.95},
 			{amount: 1, desc: "Black Tea Latte", price: 4.25},
 			{amount: 1, desc: "Scone", price: 3.25}
-		]
+		],
+		company: 'Between The Covers & Grinders Cafe'
 	},
 	computed: {
 		grand: function() {
