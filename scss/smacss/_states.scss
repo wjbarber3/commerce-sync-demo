@@ -11,7 +11,7 @@
 #content{
 	@include bp(large){padding:35px;}
 	@include bp(sm-tablet){margin-left:33%;width:67%;}
-	@include bp(mobile){border-radius:0 0 8px 8px;margin-left:0;width:100%;padding:20px;}
+	@include bp(mobile){border-radius:0 0 8px 8px;margin-left:0;width:100%;padding:20px;height:auto;}
 }
 
 /* ================== */
@@ -61,6 +61,23 @@
 		.summary-body{
 			.memo{width:100%;}
 			.summary-totals{width:100%;}
+		}
+	}
+}
+
+.account{
+	@include bp(md-two){
+		td, th{font-size:12px;}
+	}
+	@include bp(sm-tablet){
+		.account-sidebar{display:none;z-index:1;}
+		.account-body{margin-left:0;width:100%;
+			.account-body-header li.mobile-nav-trigger{display:block;z-index:2;}
+			.account-body-top{text-align:center;padding:15px;
+				h2{display:block;margin-bottom:15px;}
+				a{width:100%;}
+			}
+			.account-body-table{overflow:hidden;overflow-x:scroll;}
 		}
 	}
 }

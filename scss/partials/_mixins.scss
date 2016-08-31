@@ -19,6 +19,9 @@
   @else if $point == sm-tablet {
     @media #{$bp-sm-tablet} { @content; }
   }
+  @else if $point == tablet {
+    @media #{$bp-tablet} { @content; }
+  }
   @else if $point == md {
     @media #{$bp-md} { @content; }
   }

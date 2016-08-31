@@ -10,6 +10,7 @@ Route = {
 	page: '.page',
 	mainLink: '#sidebar li a',
 	progressButton: '.progress-btn',
+	pageTitle: 'h1.title',
 	pageRoute: function(i) {
 		hashes = ['/run-your-business', '/let-us-work-for-you', '/check-your-books'];
 		window.history.pushState("", "page", hashes[i]);
@@ -20,6 +21,7 @@ Route = {
 	},
 	activeNav: function(e) {
 		$(this.mainLink).removeClass("active");
+		$(this.pageTitle).removeClass("visible");
 		e.preventDefault();
 		var target = $(e.target),
 			targetIndex = target.index(this.mainLink),
@@ -30,10 +32,12 @@ Route = {
 		$(this.page).removeClass("current").fadeOut('fast').promise().done(function() {
 			$('.page' + pageToTarget).fadeIn().addClass("current");
 		});
+		$(this.pageTitle).eq(targetIndex + 1).addClass("visible");
 		this.pageRoute(targetIndex);
 	},
 	sidebarButton: function(e) {
 		e.preventDefault();
+		$(this.pageTitle).removeClass("visible");
 		var target = $(e.target);
 			targetIndex = target.index(this.progressButton);
 			pageToTarget = targetIndex + 2;
@@ -47,8 +51,30 @@ Route = {
 			});
 			$(this.mainLink).removeClass("active");
 			$("#sidebar li a").eq(targetIndex).addClass("active");
-			}
+			$(this.pageTitle).eq(targetIndex + 1).addClass("visible");
+		}
+
 		this.pageRoute(targetIndex);
+	}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Mobile Account Nav
+|--------------------------------------------------------------------------
+| Object to handle toggling the mobile nav from 'account' view
+| 
+*/
+
+AccountNav = {
+	navTrigger: '.mobile-nav-trigger',
+	mobileNav: '.account-sidebar',
+	init: function() {
+		$(this.navTrigger).click(this.toggleNav.bind(this));
+	},
+	toggleNav: function() {
+		$(this.mobileNav).toggle();
+		$(this.navTrigger).find('i').toggleClass("fa-remove").toggleClass("fa-bars");
 	}
 }
 
@@ -65,6 +91,7 @@ Page = {
 	path: window.location.pathname,
 	navLink: '#sidebar li a',
 	progressButton: '.progress-btn',
+	pageTitle: 'h1.title',
 	init: function() {
 		if ( this.path === "/run-your-business") {
 			$(this.currentPage).removeClass("current");
@@ -73,6 +100,8 @@ Page = {
 			$(this.navLink).eq(0).addClass("active");
 			$(this.progressButton).removeClass("visible");
 			$(this.progressButton).eq(1).addClass("visible");
+			$(this.pageTitle).removeClass("visible");
+			$(this.pageTitle).eq(1).addClass("visible");
 		} else if ( this.path === "/let-us-work-for-you") {
 			$(this.currentPage).removeClass("current");
 			$('.page3').addClass("current");
@@ -80,6 +109,8 @@ Page = {
 			$(this.navLink).eq(1).addClass("active");
 			$(this.progressButton).removeClass("visible");
 			$(this.progressButton).eq(2).addClass("visible");
+			$(this.pageTitle).removeClass("visible");
+			$(this.pageTitle).eq(2).addClass("visible");
 		} else if ( this.path === "/check-your-books") {
 			$(this.currentPage).removeClass("current");
 			$('.page4').addClass("current");
@@ -87,6 +118,8 @@ Page = {
 			$(this.navLink).eq(2).addClass("active");
 			$(this.progressButton).removeClass("visible");
 			$(this.progressButton).eq(3).addClass("visible");
+			$(this.pageTitle).removeClass("visible");
+			$(this.pageTitle).eq(3).addClass("visible");
 		}
 	}
 }
@@ -187,6 +220,7 @@ var vm = new Vue({
 */
 
 window.onload = function() {
-  Route.init();
-  Page.init();
+	Route.init();
+	Page.init();
+	AccountNav.init();
 };

@@ -18,7 +18,10 @@
 	<!-- include our svg definitions -->
 	<?php include_once("svg-defs.svg"); ?>
 
-	<h1 class="title">Interactive Demo</h1>
+	<h1 class="title visible">Interactive Demo</h1>
+	<h1 class="title">Run your business</h1>
+	<h1 class="title">Let Commerce Sync work for you</h1>
+	<h1 class="title">Check your books</h1>
 
 	<!-- ====================== -->
 	<!-- === SIDEBAR ========== -->
@@ -70,7 +73,7 @@
 		</div><!--end page2-->
 
 		<template id="receipt-template">
-			<div class="receipt">
+			<div class="receipt shadow1">
 				<div class="receipt-header">
 					<h2>{{ header }}</h2>
 				</div><!--end receipt-header-->
@@ -118,7 +121,7 @@
 
 		<div class="page page3">
 
-			<div class="summary">
+			<div class="summary shadow1">
 
 				<div class="summary-heading">
 					<h3>{{ company }}</h3>
@@ -206,14 +209,20 @@
 
 		<div class="page page4">
 
-			<div class="account">
+			<div class="account shadow1">
 				<div class="account-sidebar">
 					<nav>
 						<li><i class="fa fa-dashboard"></i><a href="#">Home</a></li>
 						<li><i class="fa fa-users"></i><a href="#">Customers</a></li>
 						<li><i class="fa fa-weixin"></i><a href="#">Vendors</a></li>
 						<li><i class="fa fa-black-tie"></i><a href="#">Employees</a></li>
-						<li><i class="fa fa-dollar"></i><a href="#">Transactions</a></li>
+						<li><i class="fa fa-dollar"></i><a class="current" href="#">Transactions</a>
+							<ul>
+								<li><a href="#">Banking</a></li>
+								<li><a href="#">Sales</a></li>
+								<li><a href="#">Char of Acct.</a></li>
+							</ul>
+						</li>
 						<li><i class="fa fa-pie-chart"></i><a href="#">Reports</a></li>
 						<li><i class="fa fa-money"></i><a href="#">Sales Tax</a></li>
 						<li><i class="fa fa-cogs"></i><a href="#">Apps</a></li>
@@ -221,76 +230,85 @@
 				</div><!--end account-sidebar-->
 				<div class="account-body">
 					<div class="account-body-header">
+						<ul>
+							<li class="mobile-nav-trigger"><i class="fa fa-bars"></i></li>
+							<li><i class="fa fa-search"></i></li>
+							<li><i class="fa fa-plus"></i></li>
+							<li><i class="fa fa-refresh"></i></li>
+						</ul>
 					</div><!--end account-body-header-->
 					<div class="account-body-top">
+						<h2>Chart of Accounts</h2>
+						<a href="#">Run Report</a>
+						<div class="clearfix"></div>
 					</div><!--end account-body-top-->
 					<div class="account-body-table">
 						<table class="four-col">
 							<tr>
 								<th>Name</th>
 								<th>Type</th>
-								<th>Balance</th>
-								<th>Action</th>
+								<th class="right">Balance</th>
+								<th class="right">Action</th>
 							</tr>
 							<tr>
 								<td>Checking</td>
 								<td>Bank Account</td>
-								<td>$1,163.18</td>
-								<td>View Register</td>
+								<td class="right">$1,163.18</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Savings</td>
 								<td>Bank Account</td>
-								<td>$2,498.56</td>
-								<td>View Register</td>
+								<td class="right">$2,498.56</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Accounts Receivable</td>
 								<td>Accounts rec.</td>
-								<td>$5,890.45</td>
-								<td>View Register</td>
+								<td class="right">$5,890.45</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Service Charges</td>
 								<td>Bank Account</td>
-								<td>$115.95</td>
-								<td>View Register</td>
+								<td class="right">$115.95</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Checing</td>
 								<td>Bank Account</td>
-								<td>$1,163.18</td>
-								<td>View Register</td>
+								<td class="right">$1,163.18</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Savings</td>
 								<td>Bank Account</td>
-								<td>$2,498.56</td>
-								<td>View Register</td>
+								<td class="right">$2,498.56</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Accounts receivable</td>
 								<td>Accounts rec.</td>
-								<td>$5,890.45</td>
-								<td>View Register</td>
+								<td class="right">$5,890.45</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Service charges</td>
 								<td>Bank Account</td>
-								<td>$115.95</td>
-								<td>View Register</td>
+								<td class="right">$115.95</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Accounts receivable</td>
 								<td>Accounts rec.</td>
-								<td>$5,890.45</td>
-								<td>View Register</td>
+								<td class="right">$5,890.45</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 							<tr>
 								<td>Service charges</td>
 								<td>Bank Account</td>
-								<td>$115.95</td>
-								<td>View Register</td>
+								<td class="right">$115.95</td>
+								<td class="right">View Register <i class="fa fa-caret-down"></i></td>
 							</tr>
 						</table>
 					</div><!--end account-body-table-->
