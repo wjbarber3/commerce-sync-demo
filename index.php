@@ -36,10 +36,29 @@
 				<li><a href="#"><span>3</span>Check your books</a></li>
 			</ol>
 		</nav>
-		<a class="progress-btn main-btn visible" href="#">Start the demo</a>
+
+		<div class="sidebar-text side-text1">
+			<p>With Commerce Sync, you can focus on your business.</p>
+			<p>Let’s ring up some sales at our Bookstore &amp; Coffee Shop to see how it works.</p>
+		</div><!--end sidebar1-->
+		<div class="sidebar-text side-text2">
+			<p>Each night we automatically and securely transfer your sales, taxes, tips, discounts and refunds into your accounting software.</p>
+		</div><!--end sidebar2-->
+		<div class="sidebar-text side-text3">
+			<p>When you open your accounting software, you have instant insights into your business.</p>
+			<p>Spend more time engaging with your customers and growing your business.</p>
+			<p><strong>Focus on what you love. We’ll focus on the books.</strong></p>
+		</div><!--end sidebar3-->
+
+		<a class="progress-btn main-btn top-margin visible" href="#">Start the demo</a>
 		<a class="progress-btn main-btn" href="#">Next</a>
 		<a class="progress-btn main-btn" href="#">Next</a>
 		<a class="progress-btn main-btn" href="#">30-day free trial</a>
+
+		<div class="sidebar-text side-text3">
+			<p><a href="#">Check out examples</a> of how Commerce Sync can help you make smarter business decisions. </p>
+		</div><!--end sidebar3-->
+
 	</div><!--end sidebar-->
 
 	<div id="content">
@@ -63,8 +82,8 @@
 		<div class="page page2">
 			
 			<!-- Call our custom receipt vue component -->
-			<receipt cc="visa" date="<?php echo date('M. d, Y'); ?> 10:52 am" :sales="sales1" :header="company"></receipt>
-			<receipt cc="paypal" date="<?php echo date('M. d, Y'); ?> 3:08 pm" :sales="sales2" :header="company"></receipt>
+			<receipt cc="visa" ccnum="1405" date="<?php echo date('M. d, Y'); ?> 10:52 am" :sales="sales1" :header="company"></receipt>
+			<receipt cc="discover" ccnum="1825" date="<?php echo date('M. d, Y'); ?> 3:08 pm" :sales="sales2" :header="company"></receipt>
 
 			<div class="clearfix"></div>
 
@@ -107,11 +126,13 @@
 						<div class="clearfix"></div>
 					</div><!--end totals-->
 					<div class="receipt-card">
-						<p><i class="cc fa fa-cc-{{ cc }}"></i> 1825</p>
+						<p><i class="cc fa fa-cc-{{ cc }}"></i> {{ ccnum }}</p>
 						<p>${{ total }}</p>
 						<div class="clearfix"></div>
 					</div><!--end card-->
 				</div><!--end receipt-body-->
+				<div class="perf">
+				</div><!--end perf-->
 			</div><!--end receipt-->
 		</template>
 

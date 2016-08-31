@@ -245,7 +245,7 @@ body {
 #sidebar ol {
   display: inline-block;
   text-align: left;
-  margin: 0 auto 50px;
+  margin: 0 auto;
 }
 /* line 10, ../scss/smacss/_layout.scss */
 #sidebar li {
@@ -286,11 +286,43 @@ body {
 #sidebar .progress-btn.visible {
   display: inline-block;
 }
+/* line 18, ../scss/smacss/_layout.scss */
+#sidebar .progress-btn.top-margin {
+  margin-top: 50px;
+}
+/* line 20, ../scss/smacss/_layout.scss */
+#sidebar .sidebar-text {
+  text-align: left;
+  display: none;
+  margin: 30px 0;
+}
+/* line 21, ../scss/smacss/_layout.scss */
+#sidebar .sidebar-text.active {
+  display: block;
+}
+/* line 22, ../scss/smacss/_layout.scss */
+#sidebar .sidebar-text p + p {
+  margin-top: 20px;
+}
+/* line 23, ../scss/smacss/_layout.scss */
+#sidebar .sidebar-text a {
+  color: #44A6B8;
+}
+/* line 24, ../scss/smacss/_layout.scss */
+#sidebar .sidebar-text a:hover {
+  color: #DC5F13;
+}
+/* line 26, ../scss/smacss/_layout.scss */
+#sidebar .sidebar-text strong {
+  font-family: "Open Sans",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
 
 /* ==================== */
 /* === CONTENT === */
 /* ==================== */
-/* line 25, ../scss/smacss/_layout.scss */
+/* line 34, ../scss/smacss/_layout.scss */
 #content {
   width: 75%;
   overflow: scroll;
@@ -300,7 +332,7 @@ body {
   padding: 50px;
   border-radius: 0 8px 8px 0;
 }
-/* line 26, ../scss/smacss/_layout.scss */
+/* line 35, ../scss/smacss/_layout.scss */
 #content .receipt-wrapper {
   margin: 50px 0 0 50px;
 }
@@ -308,11 +340,11 @@ body {
 /* ==================== */
 /* === PAGE === */
 /* ==================== */
-/* line 33, ../scss/smacss/_layout.scss */
+/* line 42, ../scss/smacss/_layout.scss */
 .page {
   display: none;
 }
-/* line 34, ../scss/smacss/_layout.scss */
+/* line 43, ../scss/smacss/_layout.scss */
 .page.current {
   display: block;
 }
@@ -881,22 +913,32 @@ table.three-col td + td + td {
 }
 
 /* ================== */
+/* === BASE === */
+/* ================== */
+@media (max-width: 767px) {
+  /* line 5, ../scss/smacss/_states.scss */
+  .title {
+    font-size: 18px;
+  }
+}
+
+/* ================== */
 /* === LAYOUT === */
 /* ================== */
 @media (max-width: 1300px) {
-  /* line 5, ../scss/smacss/_states.scss */
+  /* line 13, ../scss/smacss/_states.scss */
   #sidebar {
     padding: 35px;
   }
 }
 @media (max-width: 978px) {
-  /* line 5, ../scss/smacss/_states.scss */
+  /* line 13, ../scss/smacss/_states.scss */
   #sidebar {
     width: 33%;
   }
 }
 @media (max-width: 767px) {
-  /* line 5, ../scss/smacss/_states.scss */
+  /* line 13, ../scss/smacss/_states.scss */
   #sidebar {
     width: 100%;
     display: block;
@@ -907,20 +949,20 @@ table.three-col td + td + td {
 }
 
 @media (max-width: 1300px) {
-  /* line 11, ../scss/smacss/_states.scss */
+  /* line 19, ../scss/smacss/_states.scss */
   #content {
     padding: 35px;
   }
 }
 @media (max-width: 978px) {
-  /* line 11, ../scss/smacss/_states.scss */
+  /* line 19, ../scss/smacss/_states.scss */
   #content {
     margin-left: 33%;
     width: 67%;
   }
 }
 @media (max-width: 767px) {
-  /* line 11, ../scss/smacss/_states.scss */
+  /* line 19, ../scss/smacss/_states.scss */
   #content {
     border-radius: 0 0 8px 8px;
     margin-left: 0;
@@ -934,27 +976,27 @@ table.three-col td + td + td {
 /* === MODULES === */
 /* ================== */
 @media (max-width: 1300px) {
-  /* line 21, ../scss/smacss/_states.scss */
+  /* line 29, ../scss/smacss/_states.scss */
   .receipt {
     margin-left: 60px;
     width: 40%;
   }
 }
 @media (max-width: 1100px) {
-  /* line 21, ../scss/smacss/_states.scss */
+  /* line 29, ../scss/smacss/_states.scss */
   .receipt {
     margin-left: 30px;
     width: 45%;
   }
 }
 @media (max-width: 978px) {
-  /* line 21, ../scss/smacss/_states.scss */
+  /* line 29, ../scss/smacss/_states.scss */
   .receipt {
     width: 95%;
   }
 }
 @media (max-width: 767px) {
-  /* line 21, ../scss/smacss/_states.scss */
+  /* line 29, ../scss/smacss/_states.scss */
   .receipt {
     margin-left: 0;
     width: 100%;
@@ -962,125 +1004,125 @@ table.three-col td + td + td {
 }
 
 @media (max-width: 1200px) {
-  /* line 31, ../scss/smacss/_states.scss */
+  /* line 39, ../scss/smacss/_states.scss */
   .summary .summary-body .summary-totals {
     width: 40%;
   }
-  /* line 32, ../scss/smacss/_states.scss */
+  /* line 40, ../scss/smacss/_states.scss */
   .summary .summary-body .memo {
     width: 50%;
   }
 }
 @media (max-width: 978px) {
-  /* line 37, ../scss/smacss/_states.scss */
+  /* line 45, ../scss/smacss/_states.scss */
   .summary .summary-top input:first-of-type {
     width: 32%;
   }
-  /* line 38, ../scss/smacss/_states.scss */
+  /* line 46, ../scss/smacss/_states.scss */
   .summary .summary-top input:last-of-type {
     width: 25%;
   }
-  /* line 41, ../scss/smacss/_states.scss */
+  /* line 49, ../scss/smacss/_states.scss */
   .summary .summary-body .summary-totals {
     width: 55%;
   }
-  /* line 42, ../scss/smacss/_states.scss */
+  /* line 50, ../scss/smacss/_states.scss */
   .summary .summary-body .summary-totals h3 {
     font-size: 17px;
   }
-  /* line 43, ../scss/smacss/_states.scss */
+  /* line 51, ../scss/smacss/_states.scss */
   .summary .summary-body .summary-totals input {
     font-size: 12px;
   }
-  /* line 45, ../scss/smacss/_states.scss */
+  /* line 53, ../scss/smacss/_states.scss */
   .summary .summary-body .memo {
     width: 40%;
   }
-  /* line 47, ../scss/smacss/_states.scss */
+  /* line 55, ../scss/smacss/_states.scss */
   .summary .summary-heading {
     text-align: center;
   }
-  /* line 48, ../scss/smacss/_states.scss */
+  /* line 56, ../scss/smacss/_states.scss */
   .summary .summary-heading h3 {
     line-height: 22px;
   }
-  /* line 49, ../scss/smacss/_states.scss */
+  /* line 57, ../scss/smacss/_states.scss */
   .summary .summary-heading h3:last-of-type {
     float: none;
   }
 }
 @media (max-width: 767px) {
-  /* line 54, ../scss/smacss/_states.scss */
+  /* line 62, ../scss/smacss/_states.scss */
   .summary .summary-top {
     position: relative;
   }
-  /* line 55, ../scss/smacss/_states.scss */
+  /* line 63, ../scss/smacss/_states.scss */
   .summary .summary-top input {
     width: 100% !important;
   }
-  /* line 56, ../scss/smacss/_states.scss */
+  /* line 64, ../scss/smacss/_states.scss */
   .summary .summary-top i {
     position: absolute;
     top: 66px;
     right: 38px;
   }
-  /* line 57, ../scss/smacss/_states.scss */
+  /* line 65, ../scss/smacss/_states.scss */
   .summary .summary-top .amount {
     float: none;
     padding: 15px 0 10px;
   }
-  /* line 58, ../scss/smacss/_states.scss */
+  /* line 66, ../scss/smacss/_states.scss */
   .summary .summary-top .amount p {
     font-size: 18px;
     margin-right: 14px;
   }
-  /* line 62, ../scss/smacss/_states.scss */
+  /* line 70, ../scss/smacss/_states.scss */
   .summary .summary-body .memo {
     width: 100%;
   }
-  /* line 63, ../scss/smacss/_states.scss */
+  /* line 71, ../scss/smacss/_states.scss */
   .summary .summary-body .summary-totals {
     width: 100%;
   }
 }
 
 @media (max-width: 1200px) {
-  /* line 70, ../scss/smacss/_states.scss */
+  /* line 78, ../scss/smacss/_states.scss */
   .account td, .account th {
     font-size: 12px;
   }
 }
 @media (max-width: 978px) {
-  /* line 73, ../scss/smacss/_states.scss */
+  /* line 81, ../scss/smacss/_states.scss */
   .account .account-sidebar {
     display: none;
     z-index: 1;
   }
-  /* line 74, ../scss/smacss/_states.scss */
+  /* line 82, ../scss/smacss/_states.scss */
   .account .account-body {
     margin-left: 0;
     width: 100%;
   }
-  /* line 75, ../scss/smacss/_states.scss */
+  /* line 83, ../scss/smacss/_states.scss */
   .account .account-body .account-body-header li.mobile-nav-trigger {
     display: block;
     z-index: 2;
   }
-  /* line 76, ../scss/smacss/_states.scss */
+  /* line 84, ../scss/smacss/_states.scss */
   .account .account-body .account-body-top {
     text-align: center;
     padding: 15px;
   }
-  /* line 77, ../scss/smacss/_states.scss */
+  /* line 85, ../scss/smacss/_states.scss */
   .account .account-body .account-body-top h2 {
     display: block;
     margin-bottom: 15px;
   }
-  /* line 78, ../scss/smacss/_states.scss */
+  /* line 86, ../scss/smacss/_states.scss */
   .account .account-body .account-body-top a {
     width: 100%;
   }
-  /* line 80, ../scss/smacss/_states.scss */
+  /* line 88, ../scss/smacss/_states.scss */
   .account .account-body .account-body-table {
     overflow: hidden;
     overflow-x: scroll;

@@ -11,6 +11,7 @@ Route = {
 	mainLink: '#sidebar li a',
 	progressButton: '.progress-btn',
 	pageTitle: 'h1.title',
+	sideText: '.sidebar-text',
 	pageRoute: function(i) {
 		hashes = ['/run-your-business', '/let-us-work-for-you', '/check-your-books'];
 		window.history.pushState("", "page", hashes[i]);
@@ -34,6 +35,9 @@ Route = {
 		});
 		$(this.pageTitle).eq(targetIndex + 1).addClass("visible");
 		this.pageRoute(targetIndex);
+		$(this.sideText).removeClass("active");
+		$('.side-text' + (targetIndex + 1) ).addClass("active");
+
 	},
 	sidebarButton: function(e) {
 		e.preventDefault();
@@ -52,6 +56,8 @@ Route = {
 			$(this.mainLink).removeClass("active");
 			$("#sidebar li a").eq(targetIndex).addClass("active");
 			$(this.pageTitle).eq(targetIndex + 1).addClass("visible");
+			$(this.sideText).removeClass("active");
+			$('.side-text' + (targetIndex + 1) ).addClass("active");
 		}
 
 		this.pageRoute(targetIndex);
@@ -92,34 +98,22 @@ Page = {
 	navLink: '#sidebar li a',
 	progressButton: '.progress-btn',
 	pageTitle: 'h1.title',
+	hashes: ['/run-your-business', '/let-us-work-for-you', '/check-your-books'],
+	sideText: '.sidebar-text',
 	init: function() {
-		if ( this.path === "/run-your-business") {
-			$(this.currentPage).removeClass("current");
-			$('.page2').addClass("current");
-			$(this.navLink).removeClass("active");
-			$(this.navLink).eq(0).addClass("active");
-			$(this.progressButton).removeClass("visible");
-			$(this.progressButton).eq(1).addClass("visible");
-			$(this.pageTitle).removeClass("visible");
-			$(this.pageTitle).eq(1).addClass("visible");
-		} else if ( this.path === "/let-us-work-for-you") {
-			$(this.currentPage).removeClass("current");
-			$('.page3').addClass("current");
-			$(this.navLink).removeClass("active");
-			$(this.navLink).eq(1).addClass("active");
-			$(this.progressButton).removeClass("visible");
-			$(this.progressButton).eq(2).addClass("visible");
-			$(this.pageTitle).removeClass("visible");
-			$(this.pageTitle).eq(2).addClass("visible");
-		} else if ( this.path === "/check-your-books") {
-			$(this.currentPage).removeClass("current");
-			$('.page4').addClass("current");
-			$(this.navLink).removeClass("active");
-			$(this.navLink).eq(2).addClass("active");
-			$(this.progressButton).removeClass("visible");
-			$(this.progressButton).eq(3).addClass("visible");
-			$(this.pageTitle).removeClass("visible");
-			$(this.pageTitle).eq(3).addClass("visible");
+		for ( i = 0; i < this.hashes.length; i++ ) {
+			if ( this.path === this.hashes[i] ) {
+				$(this.currentPage).removeClass("current");
+				$('.page' +  (i + 2) ).addClass("current");
+				$(this.navLink).removeClass("active");
+				$(this.navLink).eq(i).addClass("active");
+				$(this.progressButton).removeClass("visible");
+				$(this.progressButton).eq(i+1).addClass("visible");
+				$(this.pageTitle).removeClass("visible");
+				$(this.pageTitle).eq(i+1).addClass("visible");
+				$(this.sideText).removeClass("active");
+				$('.side-text' +  (i + 1) ).addClass("active");
+			}
 		}
 	}
 }
@@ -170,7 +164,7 @@ Vue.component('receipt', {
 			this.$dispatch('totaltips', this.tip);
 		}
 	},
-	props: [ 'header', 'date', 'sales', 'cc' ]
+	props: [ 'header', 'date', 'sales', 'cc', 'ccnum' ]
 })
 
 var vm = new Vue({
