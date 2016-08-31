@@ -51,6 +51,7 @@
 	}
 	.remove-sale{padding:1px 3px;border-radius:15px;text-align:center;line-height:10px;width:15px;height:15px;display:none;}
 	&:hover{@include transform(translateY(-1px)); @include box-shadow(0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23));}
+	.cc{color:$blue;font-size:20px;margin-right:4px;}
 }
 
 /* ==================== */
@@ -119,4 +120,14 @@ table{padding:25px 25px 0;background-color:$white;display:block;display:table;wi
     	td+td{width:50%;border-right:1px solid $lightgrey;}
     	td+td+td{width:16%;border-right:1px solid $lightgrey;}
     }
+}
+
+/* ==================== */
+/* === ACCOUNT === */
+/* ==================== */
+
+.account{position:relative;width:100%;height:auto;
+	.account-sidebar, .account-body{float:left}
+	.account-sidebar{position:fixed;width:150px;background-color:$darkgrey;height:500px;}
+	.account-body{width:calc(100% - 150px);height:100%;margin-left:150px;}
 }

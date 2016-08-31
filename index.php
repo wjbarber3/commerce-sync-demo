@@ -60,8 +60,8 @@
 		<div class="page page2">
 			
 			<!-- Call our custom receipt vue component -->
-			<receipt date="<?php echo date('M. d, Y'); ?> 10:52 am" :sales="sales1" :header="company"></receipt>
-			<receipt date="<?php echo date('M. d, Y'); ?> 3:08 pm" :sales="sales2" :header="company"></receipt>
+			<receipt cc="visa" date="<?php echo date('M. d, Y'); ?> 10:52 am" :sales="sales1" :header="company"></receipt>
+			<receipt cc="paypal" date="<?php echo date('M. d, Y'); ?> 3:08 pm" :sales="sales2" :header="company"></receipt>
 
 			<div class="clearfix"></div>
 
@@ -104,7 +104,7 @@
 						<div class="clearfix"></div>
 					</div><!--end totals-->
 					<div class="receipt-card">
-						<p>Visa 1825</p>
+						<p><i class="cc fa fa-cc-{{ cc }}"></i> 1825</p>
 						<p>${{ total }}</p>
 						<div class="clearfix"></div>
 					</div><!--end card-->
@@ -123,6 +123,7 @@
 				<div class="summary-heading">
 					<h3>{{ company }}</h3>
 					<h3>Daily Summary: Sales <?php echo date("Md"); ?><i class="fa fa-question-circle-o"></i></h3>
+					<div class="clearfix"></div>
 				</div><!--end summary-heading-->
 
 				<div class="summary-top">
@@ -168,21 +169,20 @@
 						<input class="dummy-dropdown" type="text" disabled placeholder="Denver 8.0%">
 						<h3>${{ totaltax }}</h3>
 						<div class="clearfix separator"></div>
-						<h3><span>Total:</span> $82.41</h3>
+						<h3><span>Total:</span> ${{ grandtotal }}</h3>
 					</div><!--end summary-totals-->
 					<div class="clearfix"></div>
 				</div><!--end summary-body-->
 
 				<table class="three-col">
 					<tr>
-						<th class="lower"><i class="fa fa-caret-down"></i><span>Payment Summary: </span>3 Payments</th>
-						<th></th>
+						<th colspan="2" class="lower"><i class="fa fa-caret-down"></i><span>Payment Summary: </span>3 Payments</th>
 						<th class="right lower"><span>Due: </span>$0.00</th>
 					</tr>
 					<tr>
 						<td>Credit Card</td>
 						<td>Undeposited Funds</td>
-						<td class="right">$82.31</td>
+						<td class="right">{{ grandtotal }}</td>
 					</tr>
 					<tr>
 						<td>Cash</td>
@@ -205,8 +205,101 @@
 		<!-- ====================== -->
 
 		<div class="page page4">
-			<h2>Page 4</h2>
+
+			<div class="account">
+				<div class="account-sidebar">
+					<nav>
+						<li><i class="fa fa-dashboard"></i><a href="#">Home</a></li>
+						<li><i class="fa fa-users"></i><a href="#">Customers</a></li>
+						<li><i class="fa fa-weixin"></i><a href="#">Vendors</a></li>
+						<li><i class="fa fa-black-tie"></i><a href="#">Employees</a></li>
+						<li><i class="fa fa-dollar"></i><a href="#">Transactions</a></li>
+						<li><i class="fa fa-pie-chart"></i><a href="#">Reports</a></li>
+						<li><i class="fa fa-money"></i><a href="#">Sales Tax</a></li>
+						<li><i class="fa fa-cogs"></i><a href="#">Apps</a></li>
+					</nav>
+				</div><!--end account-sidebar-->
+				<div class="account-body">
+					<div class="account-body-header">
+					</div><!--end account-body-header-->
+					<div class="account-body-top">
+					</div><!--end account-body-top-->
+					<div class="account-body-table">
+						<table class="four-col">
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Balance</th>
+								<th>Action</th>
+							</tr>
+							<tr>
+								<td>Checking</td>
+								<td>Bank Account</td>
+								<td>$1,163.18</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Savings</td>
+								<td>Bank Account</td>
+								<td>$2,498.56</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Accounts Receivable</td>
+								<td>Accounts rec.</td>
+								<td>$5,890.45</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Service Charges</td>
+								<td>Bank Account</td>
+								<td>$115.95</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Checing</td>
+								<td>Bank Account</td>
+								<td>$1,163.18</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Savings</td>
+								<td>Bank Account</td>
+								<td>$2,498.56</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Accounts receivable</td>
+								<td>Accounts rec.</td>
+								<td>$5,890.45</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Service charges</td>
+								<td>Bank Account</td>
+								<td>$115.95</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Accounts receivable</td>
+								<td>Accounts rec.</td>
+								<td>$5,890.45</td>
+								<td>View Register</td>
+							</tr>
+							<tr>
+								<td>Service charges</td>
+								<td>Bank Account</td>
+								<td>$115.95</td>
+								<td>View Register</td>
+							</tr>
+						</table>
+					</div><!--end account-body-table-->
+				</div><!--end account-body-->
+				<div class="clearfix"></div>
+			</div><!--end account-chart-->
+
 		</div><!--end page4-->
+
 	</div><!--end content-->
 
 </body>

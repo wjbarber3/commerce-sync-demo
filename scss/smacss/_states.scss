@@ -11,7 +11,7 @@
 #content{
 	@include bp(large){padding:35px;}
 	@include bp(sm-tablet){margin-left:33%;width:67%;}
-	@include bp(mobile){border-radius:0 0 8px 8px;margin-left:0;width:100%;}
+	@include bp(mobile){border-radius:0 0 8px 8px;margin-left:0;width:100%;padding:20px;}
 }
 
 /* ================== */
@@ -20,7 +20,47 @@
 
 .receipt{
 	@include bp(large){margin-left:60px;width:40%;}
-	@include bp(medium){margin-left:30px;width:45%;}
+	@include bp(md){margin-left:30px;width:45%;}
 	@include bp(sm-tablet){width:95%;}
 	@include bp(mobile){margin-left:0;width:100%;}
+}
+
+.summary{
+	@include bp(md-two){
+		.summary-body{
+			.summary-totals{width:40%;}
+			.memo{width:50%;}
+		}
+	}
+	@include bp(sm-tablet){
+		.summary-top input{
+			&:first-of-type{width:32%;}
+			&:last-of-type{width:25%;}
+		}
+		.summary-body{
+			.summary-totals{width:55%;
+				h3{font-size:17px;}
+				input{font-size:12px;}
+			}
+			.memo{width:40%;}
+		}
+		.summary-heading{text-align:center;
+			h3{line-height:22px;
+				&:last-of-type{float:none;}
+			}
+		}
+	}
+	@include bp(mobile){
+		.summary-top{position:relative;
+			input{width:100% !important;}
+			i{position:absolute;top:66px;right:38px;}
+			.amount{float:none;padding:15px 0 10px;
+				p{font-size:18px;margin-right:14px;}
+			}
+		}
+		.summary-body{
+			.memo{width:100%;}
+			.summary-totals{width:100%;}
+		}
+	}
 }

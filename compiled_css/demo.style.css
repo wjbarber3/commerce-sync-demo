@@ -493,11 +493,17 @@ body {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+/* line 54, ../scss/smacss/_modules.scss */
+.receipt .cc {
+  color: #7BA7AE;
+  font-size: 20px;
+  margin-right: 4px;
+}
 
 /* ==================== */
 /* === SUMMARY === */
 /* ==================== */
-/* line 60, ../scss/smacss/_modules.scss */
+/* line 61, ../scss/smacss/_modules.scss */
 .summary {
   width: 100%;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -505,115 +511,115 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding-bottom: 25px;
 }
-/* line 61, ../scss/smacss/_modules.scss */
+/* line 62, ../scss/smacss/_modules.scss */
 .summary .summary-heading {
   padding: 25px;
   background-color: #666666;
 }
-/* line 62, ../scss/smacss/_modules.scss */
+/* line 63, ../scss/smacss/_modules.scss */
 .summary .summary-heading h3 {
   display: inline-block;
 }
-/* line 63, ../scss/smacss/_modules.scss */
+/* line 64, ../scss/smacss/_modules.scss */
 .summary .summary-heading h3:last-of-type {
   float: right;
 }
-/* line 64, ../scss/smacss/_modules.scss */
+/* line 65, ../scss/smacss/_modules.scss */
 .summary .summary-heading h3 i {
   padding-left: 10px;
   border-left: 1px solid white;
   margin-left: 10px;
   font-size: 18px;
 }
-/* line 67, ../scss/smacss/_modules.scss */
+/* line 68, ../scss/smacss/_modules.scss */
 .summary .summary-top {
   padding: 8px 25px;
   background-color: #F5FAFB;
   border-bottom: 1px solid #EFEFEF;
 }
-/* line 68, ../scss/smacss/_modules.scss */
+/* line 69, ../scss/smacss/_modules.scss */
 .summary .summary-top input {
   margin-top: 7px;
 }
-/* line 69, ../scss/smacss/_modules.scss */
+/* line 70, ../scss/smacss/_modules.scss */
 .summary .summary-top i {
   color: #A2A2A2;
   font-size: 22px;
 }
-/* line 70, ../scss/smacss/_modules.scss */
+/* line 71, ../scss/smacss/_modules.scss */
 .summary .summary-top .amount {
   float: right;
   text-align: center;
 }
-/* line 71, ../scss/smacss/_modules.scss */
+/* line 72, ../scss/smacss/_modules.scss */
 .summary .summary-top .amount p {
   display: block;
   color: #A2A2A2;
 }
-/* line 72, ../scss/smacss/_modules.scss */
+/* line 73, ../scss/smacss/_modules.scss */
 .summary .summary-top .amount p:last-of-type {
   font-size: 28px;
   color: #666666;
   line-height: 32px;
 }
-/* line 76, ../scss/smacss/_modules.scss */
+/* line 77, ../scss/smacss/_modules.scss */
 .summary .summary-body {
   padding: 0 25px;
   background-color: #FFFFFF;
   display: block;
 }
-/* line 77, ../scss/smacss/_modules.scss */
+/* line 78, ../scss/smacss/_modules.scss */
 .summary .summary-body .memo {
   width: 60%;
 }
-/* line 78, ../scss/smacss/_modules.scss */
+/* line 79, ../scss/smacss/_modules.scss */
 .summary .summary-body .memo, .summary .summary-body .summary-totals {
   display: inline-block;
   float: left;
   margin-top: 25px;
 }
-/* line 79, ../scss/smacss/_modules.scss */
+/* line 80, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals {
   width: 30%;
   text-align: right;
   padding-right: 15px;
   float: right;
 }
-/* line 80, ../scss/smacss/_modules.scss */
+/* line 81, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals input {
   width: 70%;
   float: left;
   font-size: 14px;
   height: 30px;
 }
-/* line 81, ../scss/smacss/_modules.scss */
+/* line 82, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals .separator {
   border-top: 1px solid #EFEFEF;
   margin: 18px 0 15px;
 }
-/* line 82, ../scss/smacss/_modules.scss */
+/* line 83, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals h3 {
   color: #666666;
   font-size: 20px;
   margin-top: 24px;
 }
-/* line 83, ../scss/smacss/_modules.scss */
+/* line 84, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals h3:first-of-type {
   margin-bottom: 14px;
   margin-top: 0px;
 }
-/* line 84, ../scss/smacss/_modules.scss */
+/* line 85, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals h3:last-of-type {
   margin-top: 4px;
 }
-/* line 86, ../scss/smacss/_modules.scss */
+/* line 87, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals span {
   font-family: "Open Sans",sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
 }
-/* line 89, ../scss/smacss/_modules.scss */
+/* line 90, ../scss/smacss/_modules.scss */
 .summary input, .summary textarea {
   padding: 8px 12px;
   border: 1px solid #EFEFEF;
@@ -624,14 +630,14 @@ body {
   font-weight: 300;
   width: auto;
 }
-/* line 90, ../scss/smacss/_modules.scss */
+/* line 91, ../scss/smacss/_modules.scss */
 .summary input.dummy-dropdown {
   background-image: url("/img/drop-arrow.png");
   background-repeat: no-repeat;
   background-size: 36px 100%;
   background-position: 100%;
 }
-/* line 91, ../scss/smacss/_modules.scss */
+/* line 92, ../scss/smacss/_modules.scss */
 .summary label, .summary textarea {
   display: block;
   width: 100%;
@@ -641,7 +647,7 @@ body {
 /* ==================== */
 /* === TABLES === */
 /* ==================== */
-/* line 98, ../scss/smacss/_modules.scss */
+/* line 99, ../scss/smacss/_modules.scss */
 table {
   padding: 25px 25px 0;
   background-color: #FFFFFF;
@@ -650,11 +656,11 @@ table {
   width: 100%;
   border-collapse: inherit;
 }
-/* line 99, ../scss/smacss/_modules.scss */
+/* line 100, ../scss/smacss/_modules.scss */
 table tbody {
   width: 100%;
 }
-/* line 100, ../scss/smacss/_modules.scss */
+/* line 101, ../scss/smacss/_modules.scss */
 table th {
   border-top: 1px solid #EFEFEF;
   background-color: #F5FAFB;
@@ -663,30 +669,30 @@ table th {
   text-transform: uppercase;
   font-size: 15px;
 }
-/* line 101, ../scss/smacss/_modules.scss */
+/* line 102, ../scss/smacss/_modules.scss */
 table th.lower {
   text-transform: none;
 }
-/* line 103, ../scss/smacss/_modules.scss */
+/* line 104, ../scss/smacss/_modules.scss */
 table td {
   padding: 10px 15px;
   color: #A2A2A2;
 }
-/* line 104, ../scss/smacss/_modules.scss */
+/* line 105, ../scss/smacss/_modules.scss */
 table td span {
   font-family: "Open Sans",sans-serif;
   font-style: normal;
   font-weight: 300;
 }
-/* line 106, ../scss/smacss/_modules.scss */
+/* line 107, ../scss/smacss/_modules.scss */
 table th, table td {
   border-bottom: 1px solid #EFEFEF;
 }
-/* line 107, ../scss/smacss/_modules.scss */
+/* line 108, ../scss/smacss/_modules.scss */
 table .right {
   text-align: right;
 }
-/* line 108, ../scss/smacss/_modules.scss */
+/* line 109, ../scss/smacss/_modules.scss */
 table i {
   color: #7BA7AE;
   display: inline-block;
@@ -694,7 +700,7 @@ table i {
   font-size: 15px !important;
   margin-right: 8px;
 }
-/* line 109, ../scss/smacss/_modules.scss */
+/* line 110, ../scss/smacss/_modules.scss */
 table i.circle {
   border: 1px solid #7BA7AE;
   margin-left: 8px;
@@ -705,38 +711,65 @@ table i.circle {
   padding: 1px;
   font-size: 10px !important;
 }
-/* line 112, ../scss/smacss/_modules.scss */
+/* line 113, ../scss/smacss/_modules.scss */
 table.two-col th, table.two-col td {
   width: 90%;
   border-left: 1px solid #EFEFEF;
 }
-/* line 113, ../scss/smacss/_modules.scss */
+/* line 114, ../scss/smacss/_modules.scss */
 table.two-col th + th, table.two-col td + td {
   width: 10%;
   border-right: 1px solid #EFEFEF;
 }
-/* line 116, ../scss/smacss/_modules.scss */
+/* line 117, ../scss/smacss/_modules.scss */
 table.three-col th {
   border-left: 1px solid #EFEFEF;
 }
-/* line 117, ../scss/smacss/_modules.scss */
+/* line 118, ../scss/smacss/_modules.scss */
 table.three-col th + th {
   border-right: 1px solid #EFEFEF;
 }
-/* line 118, ../scss/smacss/_modules.scss */
+/* line 119, ../scss/smacss/_modules.scss */
 table.three-col td {
   width: 34%;
   border-left: 1px solid #EFEFEF;
 }
-/* line 119, ../scss/smacss/_modules.scss */
+/* line 120, ../scss/smacss/_modules.scss */
 table.three-col td + td {
   width: 50%;
   border-right: 1px solid #EFEFEF;
 }
-/* line 120, ../scss/smacss/_modules.scss */
+/* line 121, ../scss/smacss/_modules.scss */
 table.three-col td + td + td {
   width: 16%;
   border-right: 1px solid #EFEFEF;
+}
+
+/* ==================== */
+/* === ACCOUNT === */
+/* ==================== */
+/* line 129, ../scss/smacss/_modules.scss */
+.account {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+/* line 130, ../scss/smacss/_modules.scss */
+.account .account-sidebar, .account .account-body {
+  float: left;
+}
+/* line 131, ../scss/smacss/_modules.scss */
+.account .account-sidebar {
+  position: fixed;
+  width: 150px;
+  background-color: #666666;
+  height: 500px;
+}
+/* line 132, ../scss/smacss/_modules.scss */
+.account .account-body {
+  width: calc(100% - 150px);
+  height: 100%;
+  margin-left: 150px;
 }
 
 /* ================== */
@@ -784,6 +817,7 @@ table.three-col td + td + td {
     border-radius: 0 0 8px 8px;
     margin-left: 0;
     width: 100%;
+    padding: 20px;
   }
 }
 
@@ -814,6 +848,89 @@ table.three-col td + td + td {
   /* line 21, ../scss/smacss/_states.scss */
   .receipt {
     margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* line 31, ../scss/smacss/_states.scss */
+  .summary .summary-body .summary-totals {
+    width: 40%;
+  }
+  /* line 32, ../scss/smacss/_states.scss */
+  .summary .summary-body .memo {
+    width: 50%;
+  }
+}
+@media (max-width: 978px) {
+  /* line 37, ../scss/smacss/_states.scss */
+  .summary .summary-top input:first-of-type {
+    width: 32%;
+  }
+  /* line 38, ../scss/smacss/_states.scss */
+  .summary .summary-top input:last-of-type {
+    width: 25%;
+  }
+  /* line 41, ../scss/smacss/_states.scss */
+  .summary .summary-body .summary-totals {
+    width: 55%;
+  }
+  /* line 42, ../scss/smacss/_states.scss */
+  .summary .summary-body .summary-totals h3 {
+    font-size: 17px;
+  }
+  /* line 43, ../scss/smacss/_states.scss */
+  .summary .summary-body .summary-totals input {
+    font-size: 12px;
+  }
+  /* line 45, ../scss/smacss/_states.scss */
+  .summary .summary-body .memo {
+    width: 40%;
+  }
+  /* line 47, ../scss/smacss/_states.scss */
+  .summary .summary-heading {
+    text-align: center;
+  }
+  /* line 48, ../scss/smacss/_states.scss */
+  .summary .summary-heading h3 {
+    line-height: 22px;
+  }
+  /* line 49, ../scss/smacss/_states.scss */
+  .summary .summary-heading h3:last-of-type {
+    float: none;
+  }
+}
+@media (max-width: 767px) {
+  /* line 54, ../scss/smacss/_states.scss */
+  .summary .summary-top {
+    position: relative;
+  }
+  /* line 55, ../scss/smacss/_states.scss */
+  .summary .summary-top input {
+    width: 100% !important;
+  }
+  /* line 56, ../scss/smacss/_states.scss */
+  .summary .summary-top i {
+    position: absolute;
+    top: 66px;
+    right: 38px;
+  }
+  /* line 57, ../scss/smacss/_states.scss */
+  .summary .summary-top .amount {
+    float: none;
+    padding: 15px 0 10px;
+  }
+  /* line 58, ../scss/smacss/_states.scss */
+  .summary .summary-top .amount p {
+    font-size: 18px;
+    margin-right: 14px;
+  }
+  /* line 62, ../scss/smacss/_states.scss */
+  .summary .summary-body .memo {
+    width: 100%;
+  }
+  /* line 63, ../scss/smacss/_states.scss */
+  .summary .summary-body .summary-totals {
     width: 100%;
   }
 }

@@ -4,45 +4,28 @@
   @include transform(translateY($perc2));
 }
 
-// breakpoints r us
-
+// Breakpoints
 @mixin bp($point) {
-  $bp-sm-mobile: "(max-width: 485px)";
   $bp-mobile: "(max-width: 767px)";
-  $bp-md-tablet: "(max-width: 768px)";
   $bp-sm-tablet: "(max-width: 978px)";
   $bp-tablet: "(max-width: 1024px)";
-  $bp-medium: "(max-width: 1100px)";
+  $bp-md: "(max-width: 1100px)";
+  $bp-md-two: "(max-width: 1200px)";
   $bp-large: "(max-width: 1300px)";
-  $bp-xlarge: "(max-width: 1599px)";
-  $bp-huge: "(min-width: 1600px)";
 
-  @if $point == sm-mobile {
-    @media #{$bp-sm-mobile} { @content; }
-  }
   @if $point == mobile {
     @media #{$bp-mobile}  { @content; }
   } 
   @else if $point == sm-tablet {
     @media #{$bp-sm-tablet} { @content; }
   }
-   @else if $point == md-tablet {
-    @media #{$bp-md-tablet} { @content; }
+  @else if $point == md {
+    @media #{$bp-md} { @content; }
   }
-  @else if $point == tablet {
-    @media #{$bp-tablet} { @content; }
-  }
-  @else if $point == medium {
-    @media #{$bp-medium} { @content; }
+  @else if $point == md-two {
+    @media #{$bp-md-two} { @content; }
   }
   @else if $point == large {
     @media #{$bp-large} { @content; }
   }
-  @else if $point == xlarge {
-    @media #{$bp-xlarge} { @content; }
-  } 
-  @else if $point == huge {
-    @media #{$bp-huge} { @content; }
-  }
-
 }

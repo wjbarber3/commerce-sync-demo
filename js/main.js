@@ -56,7 +56,7 @@ Route = {
 |--------------------------------------------------------------------------
 | Route History Updates
 |--------------------------------------------------------------------------
-| Conditional loading based on hisotry manipulation
+| Conditional loading based on history manipulation
 | 
 */
 
@@ -64,22 +64,29 @@ Page = {
 	currentPage: '.page.current',
 	path: window.location.pathname,
 	navLink: '#sidebar li a',
+	progressButton: '.progress-btn',
 	init: function() {
 		if ( this.path === "/run-your-business") {
 			$(this.currentPage).removeClass("current");
 			$('.page2').addClass("current");
 			$(this.navLink).removeClass("active");
 			$(this.navLink).eq(0).addClass("active");
+			$(this.progressButton).removeClass("visible");
+			$(this.progressButton).eq(1).addClass("visible");
 		} else if ( this.path === "/let-us-work-for-you") {
 			$(this.currentPage).removeClass("current");
 			$('.page3').addClass("current");
 			$(this.navLink).removeClass("active");
 			$(this.navLink).eq(1).addClass("active");
+			$(this.progressButton).removeClass("visible");
+			$(this.progressButton).eq(2).addClass("visible");
 		} else if ( this.path === "/check-your-books") {
 			$(this.currentPage).removeClass("current");
 			$('.page4').addClass("current");
 			$(this.navLink).removeClass("active");
 			$(this.navLink).eq(2).addClass("active");
+			$(this.progressButton).removeClass("visible");
+			$(this.progressButton).eq(3).addClass("visible");
 		}
 	}
 }
@@ -130,7 +137,7 @@ Vue.component('receipt', {
 			this.$dispatch('totaltips', this.tip);
 		}
 	},
-	props: [ 'header', 'date', 'sales' ]
+	props: [ 'header', 'date', 'sales', 'cc' ]
 })
 
 var vm = new Vue({
@@ -151,7 +158,6 @@ var vm = new Vue({
 		],
 		company: 'Between The Covers & Grinders Cafe'
 	},
-	// TODO -- Need computed function for TotalTips
 	computed: {
 		'grandtotal': function(totals) {
 			return Number(totals.$children[0].total) + Number(totals.$children[1].total);
@@ -168,12 +174,9 @@ var vm = new Vue({
 			return Number(this.taxable) + Number(this.totaltips);
 		},
 		totaltax: function() {
-			// TODO -- rename var
-			var multiple = this.grandsubtotal * .08;
-			return multiple.toFixed(2);
+			var totaltax = this.grandsubtotal * .08;
+			return totaltax.toFixed(2);
 		}
-		// TODO -- need bottom total function, question...is this the same as grandtotal
-
 	}
 })
 
