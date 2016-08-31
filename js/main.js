@@ -96,8 +96,7 @@ Vue.component('receipt', {
 	template: '#receipt-template',
 	data: function() {
 		return {
-			tip: '',
-			grandtotal: ''
+			tip: ''
 		};
 	},
 	methods: {
@@ -111,63 +110,70 @@ Vue.component('receipt', {
 		}
 	},
 	computed: {
-		subtotal: function subtotal() {
+		subtotal: function() {
 			var result = 0;
 			this.sales.forEach(function (sale) {
 				return result += +sale.price;
 			});
 			var subtotal = Math.round(100 * result) / 100;
 			return subtotal.toFixed(2);
+			this.$dispatch('taxable', this.subtotal);
 		},
-		tax: function tax() {
+		tax: function() {
 			var tax = this.subtotal * .08;
 			return tax.toFixed(2);
 		},
-		total: function total() {
+		total: function() {
 			var total = Number(this.subtotal) + Number(this.tax) + Number(this.tip);
 			return total.toFixed(2);
+			this.$dispatch('grandtotal', this.total);
+			this.$dispatch('totaltips', this.tip);
 		}
 	},
 	props: [ 'header', 'date', 'sales' ]
 })
 
-// Vue.component('summary', {
-// 	template: '#summary-template',
-// 	data: function() {
-// 		return
-// 	},
-// 	methods: {
-
-// 	},
-// 	computed: {
-
-// 	},
-// 	props: []
-// })
-
 var vm = new Vue({
 	el: '#content',
 	data: {
 		sales1: [
-			{amount: 1, desc: "Dante's Inferno", price: 13.99},
-			{amount: 1, desc: "Espresso", price: 5.25},
-			{amount: 1, desc: "The Sun Also Rises", price: 11.99},
-			{amount: 1, desc: "Spanish Coffee", price: 1.99}
+			{ amount: 1, desc: "Dante's Inferno", price: 13.99 },
+			{ amount: 1, desc: "Espresso", price: 5.25 },
+			{ amount: 1, desc: "The Sun Also Rises", price: 11.99 },
+			{ amount: 1, desc: "Spanish Coffee", price: 1.99 }
 		],
 		sales2: [
-			{amount: 1, desc: "Huckleberry Finn", price: 14.95},
-			{amount: 1, desc: "Americano", price: 2.29},
-			{amount: 1, desc: "Pride & Prejudice", price: 12.95},
-			{amount: 1, desc: "Black Tea Latte", price: 4.25},
-			{amount: 1, desc: "Scone", price: 3.25}
+			{ amount: 1, desc: "Huckleberry Finn", price: 14.95 },
+			{ amount: 1, desc: "Americano", price: 2.29 },
+			{ amount: 1, desc: "Pride & Prejudice", price: 12.95 },
+			{ amount: 1, desc: "Black Tea Latte", price: 4.25 },
+			{ amount: 1, desc: "Scone", price: 3.25 }
 		],
 		company: 'Between The Covers & Grinders Cafe'
 	},
+	// TODO -- Need computed function for TotalTips
 	computed: {
-		grand: function() {
-			// this.$root.total;
-			// this.$children.total;
+		'grandtotal': function(totals) {
+			return Number(totals.$children[0].total) + Number(totals.$children[1].total);
+		},
+		'taxable': function(subtotals) {
+			var sum = Number(subtotals.$children[0].subtotal) + Number(subtotals.$children[1].subtotal);
+			return sum.toFixed(2);
+		},
+		'totaltips': function(tips) {
+			var sum = Number(tips.$children[0].tip) + Number(tips.$children[1].tip);
+			return sum.toFixed(2);
+		},
+		grandsubtotal: function() {
+			return Number(this.taxable) + Number(this.totaltips);
+		},
+		totaltax: function() {
+			// TODO -- rename var
+			var multiple = this.grandsubtotal * .08;
+			return multiple.toFixed(2);
 		}
+		// TODO -- need bottom total function, question...is this the same as grandtotal
+
 	}
 })
 

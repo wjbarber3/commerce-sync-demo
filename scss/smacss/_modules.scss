@@ -74,17 +74,17 @@
 		}
 	}
 	.summary-body{padding:0 25px;background-color:$white;display:block;
-		.memo{width:70%;}
-		.summary-totals{width:30%;padding-left:40px;text-align:right;padding-right:15px;
-			input{width:70%;float:left;font-size:14px;}
-			.separator{border-top:1px solid $lightgrey;margin:12px 0 15px;}
-			h3{color:$darkgrey;font-size:20px;margin-top:31px;
+		.memo{width:60%;}
+		.memo, .summary-totals{display:inline-block;float:left;margin-top:25px;}
+		.summary-totals{width:30%;text-align:right;padding-right:15px;float:right;
+			input{width:70%;float:left;font-size:14px;height:30px;}
+			.separator{border-top:1px solid $lightgrey;margin:18px 0 15px;}
+			h3{color:$darkgrey;font-size:20px;margin-top:24px;
 				&:first-of-type{margin-bottom:14px;margin-top:0px;}
 				&:last-of-type{margin-top:4px;}
 			}
 			span{@include open-bld;font-size:18px;}
 		}
-		.memo, .summary-totals{display:inline-block;float:left;margin-top:25px;}
 	}
 	input,textarea{padding:8px 12px;border:1px solid $lightgrey;font-size:16px;margin-right:8px;@include open-light;width:auto;}
 	input.dummy-dropdown{background-image:url('/img/drop-arrow.png');background-repeat:no-repeat;background-size:36px 100%;background-position:100%;}

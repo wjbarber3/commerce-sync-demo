@@ -564,53 +564,54 @@ body {
 }
 /* line 77, ../scss/smacss/_modules.scss */
 .summary .summary-body .memo {
-  width: 70%;
+  width: 60%;
 }
 /* line 78, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-totals {
-  width: 30%;
-  padding-left: 40px;
-  text-align: right;
-  padding-right: 15px;
+.summary .summary-body .memo, .summary .summary-body .summary-totals {
+  display: inline-block;
+  float: left;
+  margin-top: 25px;
 }
 /* line 79, ../scss/smacss/_modules.scss */
+.summary .summary-body .summary-totals {
+  width: 30%;
+  text-align: right;
+  padding-right: 15px;
+  float: right;
+}
+/* line 80, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals input {
   width: 70%;
   float: left;
   font-size: 14px;
-}
-/* line 80, ../scss/smacss/_modules.scss */
-.summary .summary-body .summary-totals .separator {
-  border-top: 1px solid #EFEFEF;
-  margin: 12px 0 15px;
+  height: 30px;
 }
 /* line 81, ../scss/smacss/_modules.scss */
+.summary .summary-body .summary-totals .separator {
+  border-top: 1px solid #EFEFEF;
+  margin: 18px 0 15px;
+}
+/* line 82, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals h3 {
   color: #666666;
   font-size: 20px;
-  margin-top: 31px;
+  margin-top: 24px;
 }
-/* line 82, ../scss/smacss/_modules.scss */
+/* line 83, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals h3:first-of-type {
   margin-bottom: 14px;
   margin-top: 0px;
 }
-/* line 83, ../scss/smacss/_modules.scss */
+/* line 84, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals h3:last-of-type {
   margin-top: 4px;
 }
-/* line 85, ../scss/smacss/_modules.scss */
+/* line 86, ../scss/smacss/_modules.scss */
 .summary .summary-body .summary-totals span {
   font-family: "Open Sans",sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-}
-/* line 87, ../scss/smacss/_modules.scss */
-.summary .summary-body .memo, .summary .summary-body .summary-totals {
-  display: inline-block;
-  float: left;
-  margin-top: 25px;
 }
 /* line 89, ../scss/smacss/_modules.scss */
 .summary input, .summary textarea {

@@ -60,8 +60,8 @@
 		<div class="page page2">
 			
 			<!-- Call our custom receipt vue component -->
-			<receipt date="Sept. 23, 2016 10:52 am" :sales="sales1" :header="company"></receipt>
-			<receipt date="Sept. 25, 2016 3:08 pm" :sales="sales2" :header="company"></receipt>
+			<receipt date="<?php echo date('M. d, Y'); ?> 10:52 am" :sales="sales1" :header="company"></receipt>
+			<receipt date="<?php echo date('M. d, Y'); ?> 3:08 pm" :sales="sales2" :header="company"></receipt>
 
 			<div class="clearfix"></div>
 
@@ -130,7 +130,7 @@
 					<input type="text" disabled placeholder="<?php echo date('m/d/y') ?>"><i class="fa fa-calendar"></i>
 					<div class="amount">
 						<p>Amount Paid</p>
-						<p>$82.31</p>
+						<p>${{ grandtotal }}</p>
 					</div><!--end amount-->
 					<div class="clearfix"></div>
 				</div><!--end summary-top-->
@@ -142,11 +142,11 @@
 					</tr>
 					<tr>
 						<td>Taxable Sales</td>
-						<td class="right">$76.81</td>
+						<td class="right">${{ taxable }}</td>
 					</tr>
 					<tr>
 						<td>Total Tips</td>
-						<td class="right">$6.00</td>
+						<td class="right">${{ totaltips }}</td>
 					</tr>
 					<tr>
 						<td>Refunds<i class="fa fa-info circle"></i></td>
@@ -164,9 +164,9 @@
 						<textarea id="memo" disabled></textarea>
 					</div><!--end memo-->
 					<div class="summary-totals">
-						<h3><span>Subtotal:</span> $76.66</h3>
+						<h3><span>Subtotal:</span> {{ grandsubtotal }}</h3>
 						<input class="dummy-dropdown" type="text" disabled placeholder="Denver 8.0%">
-						<h3>$5.65</h3>
+						<h3>${{ totaltax }}</h3>
 						<div class="clearfix separator"></div>
 						<h3><span>Total:</span> $82.41</h3>
 					</div><!--end summary-totals-->
