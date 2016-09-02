@@ -7,10 +7,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Commerce Sync Demo</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 	<link rel="stylesheet" href="compiled_css/demo.style.css">
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
-	<link rel="stylesheet" href="fontawesome/font-awesome.min.css">
 </head>
 
 <body>
@@ -31,9 +32,9 @@
 		<a href="/"><svg width="261" height="70"><use xlink:href="#logo"></use></svg></a>
 		<nav>
 			<ol>
-				<li><a href="#"><span>1</span>Run your business</a></li>
-				<li><a href="#"><span>2</span>Let us work for you</a></li>
-				<li><a href="#"><span>3</span>Check your books</a></li>
+				<li><a href="#"><span class="num">1</span><span class="label">Run your business</span></a></li>
+				<li><a href="#"><span class="num">2</span><span class="label">Let us work for you</span></a></li>
+				<li><a href="#"><span class="num">3</span><span class="label">Check your books</span></a></li>
 			</ol>
 		</nav>
 
@@ -68,7 +69,7 @@
 		<!-- ====================== -->
 
 		<div class="page page1 current">
-			<svg class="illustration" width="303" height="261"><use xlink:href="#illustration"></use></svg>
+			<img class="illustration" width="303" height="261" src="/img/illustration.png">
 			<p>As a small business owner, you know that sometimes there are just not enough hours in the day. The work starts before you walk in the door and wraps up long after the lights go out.</p>
 			<p>From ringing up sales to managing employees, all of the small tasks add up.</p>
 			<p>By the time the day is done, the last thing you want to do is stare at numbers on a spreadsheet and manually enter data into your accounting software.</p>
@@ -91,17 +92,17 @@
 
 		</div><!--end page2-->
 
-		<template id="receipt-template">
+		<script type="x/templates" id="receipt-template">
 			<div class="receipt shadow1">
 				<div class="receipt-header">
 					<h2>{{ header }}</h2>
-				</div><!--end receipt-header-->
+				</div>
 				<div class="receipt-body">
 					<div class="receipt-labels">
 						<p>Sales</p>
 						<p>{{ date }}</p>
 						<div class="clearfix"></div>
-					</div><!--end receipt-labels-->
+					</div>
 					<div class="receipt-sales">
 						<div class="receipt-sale-row" v-for="sale in sales">
 							<p>{{ sale.amount }}</p>
@@ -110,31 +111,30 @@
 							<p class="sale-price"><span>$</span><input placeholder="0.00" type="number" step="0.01" min="0" v-model="sale.price"></p>
 						</div><!--end receipt-sale-row-->
 						<a href="#" class="sale-btn add-sale" v-show="sales.length < 5" @click.prevent="addSale"><span class="fa fa-plus-circle"></span> Add sale</a>
-					</div><!--end receipt-sales-->
+					</div>
 					<div class="receipt-subtotals">
 						<p>Subtotal</p>
 						<p>${{ subtotal }}</p>
 						<p>Tax</p>
 						<p>${{ tax }}</p>
 						<div class="clearfix"></div>
-					</div><!--end subtotals-->
+					</div>
 					<div class="receipt-totals">
 						<p>Tip</p>
 						<p>$<input placeholder="0.00" type="number" step="1" min="0" v-model="tip"></p>
 						<p>Total</p>
 						<p>${{ total }}</p>
 						<div class="clearfix"></div>
-					</div><!--end totals-->
+					</div>
 					<div class="receipt-card">
 						<p><i class="cc fa fa-cc-{{ cc }}"></i> {{ ccnum }}</p>
 						<p>${{ total }}</p>
 						<div class="clearfix"></div>
-					</div><!--end card-->
-				</div><!--end receipt-body-->
+					</div>
 				<div class="perf">
-				</div><!--end perf-->
-			</div><!--end receipt-->
-		</template>
+				</div>
+			</div>
+		</script>
 
 		<!-- ====================== -->
 		<!-- === PAGE THREE ======= -->
@@ -174,7 +174,7 @@
 						<td class="right">${{ totaltips }}</td>
 					</tr>
 					<tr>
-						<td>Refunds<i class="fa fa-info circle"></i></td>
+						<td>Refunds<span class="tooltip"><span class="tooltip-item"><i class="fa fa-info circle"></i></span><span class="tooltip-content clearfix"><span><strong>This</strong> is a tooltip. It should not contain more than 170 characters. Lorem ipsum dalor sit amet, en este dia, las personas tengo comida.</span></span></span></td>
 						<td class="right">$0.00</td>
 					</tr>
 					<tr>

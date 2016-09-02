@@ -2,14 +2,14 @@
 /* === SIDEBAR === */
 /* ==================== */
 
-#sidebar{width:25%;position:fixed;overflow:scroll;background-color:$white;height:calc(100vh - 115px);padding:50px;border-radius:8px 0 0 8px;text-align:center;
+#sidebar{width:25%;position:fixed;overflow:auto;background-color:$white;height:calc(100vh - 115px);padding:50px;border-radius:8px 0 0 8px;text-align:center;
 	svg{margin-bottom:30px;transition:all .2s ease-in-out;max-width:100%;
 		&:hover{@include transform(translateY(-2px));}
 	}
 	ol{display:inline-block;text-align:left;margin:0 auto;}
 	li{margin-bottom:12px;
 		a{@include open-semi;font-size:14px;color:#000;opacity:.3;transition:all .2s ease-in-out;
-			span{color:white;background:grey;border-radius:30px;margin-right:8px;width:30px;height:30px;display:inline-block;text-align: center;padding:5px 0;}
+			.num{color:white;background:grey;border-radius:30px;margin-right:8px;width:30px;height:30px;display:inline-block;text-align: center;padding:5px 0;}
 			&:hover, &.active{opacity:1;color:$orange;}
 		}
 	}
@@ -31,7 +31,7 @@
 /* === CONTENT === */
 /* ==================== */
 
-#content{width:75%;overflow:scroll;margin-left:25%;height:calc(100vh - 115px);background:$white;padding:50px;border-radius:0 8px 8px 0;
+#content{width:75%;overflow:auto;margin-left:25%;height:calc(100vh - 115px);background:$white;padding:50px;border-radius:0 8px 8px 0;
 	.receipt-wrapper{margin:50px 0 0 50px;}
 }
 

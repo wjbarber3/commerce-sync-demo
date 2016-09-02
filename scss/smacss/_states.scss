@@ -6,14 +6,44 @@
 	@include bp(mobile){font-size:18px;}
 }
 
+.page1 {
+	@include bp(mobile){
+		p{max-width:95%;text-align:center;}
+		.illustration{margin-bottom:20px;}
+	}
+}
+
+table{
+	@include bp(mobile){max-width:100%;padding:15px;
+		td{font-size:12px;padding:10px;}
+	}
+}
+
 /* ================== */
 /* === LAYOUT === */
 /* ================== */
 
+body{
+	@include bp(mobile){padding:80px 15px 25px;}
+}
+
 #sidebar{
 	@include bp(large){padding:35px;}
 	@include bp(sm-tablet){width:33%;}
-	@include bp(mobile){width:100%;display:block;position:relative;border-radius:8px 8px 0 0;height:auto;}
+	@include bp(mobile){width:100%;display:block;position:relative;border-radius:8px 8px 0 0;height:auto;padding-bottom:0px;
+		nav{position:relative;display:block;}
+		ol{width:100%;margin-bottom:20px;}
+		li{display:inline-block;width:33%;background-color:$lightgrey;text-align:center;margin-right:-4px;
+			a{opacity:1;
+				.num{background-color:transparent;width:100%;height:100%;border-radius:0;}
+				&.active{
+					.num{background-color:$orange;}
+					span.label{display:block;width:100%;}
+				}
+			}
+		}
+		span.label{position:absolute;top:40px;display:none;left:0;}
+	}
 }
 
 #content{
@@ -30,7 +60,12 @@
 	@include bp(large){margin-left:60px;width:40%;}
 	@include bp(md){margin-left:30px;width:45%;}
 	@include bp(sm-tablet){width:95%;}
-	@include bp(mobile){margin-left:0;width:100%;}
+	@include bp(mobile){margin-left:0;width:100%;
+		.receipt-body{padding:15px;}
+		.receipt-sales p{margin-right:5px;}
+		.receipt-header{padding:15px;}
+		.receipt-body input[type="text"]{width:80%;font-size:11px;}
+	}
 }
 
 .summary{
@@ -59,9 +94,10 @@
 		}
 	}
 	@include bp(mobile){
+		input, textarea{border-color:$grey;}
 		.summary-top{position:relative;
 			input{width:100% !important;}
-			i{position:absolute;top:66px;right:38px;}
+			i{position:absolute;top:75px;right:38px;}
 			.amount{float:none;padding:15px 0 10px;
 				p{font-size:18px;margin-right:14px;}
 			}

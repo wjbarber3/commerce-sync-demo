@@ -24,7 +24,7 @@ Route = {
 		$(this.mainLink).removeClass("active");
 		$(this.pageTitle).removeClass("visible");
 		e.preventDefault();
-		var target = $(e.target),
+		var target = $(e.target).parent(),
 			targetIndex = target.index(this.mainLink),
 			pageToTarget = targetIndex + 2;
 		target.addClass("active");

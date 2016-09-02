@@ -3,7 +3,7 @@
 /* ==================== */
 
 .page1{
-	.illustration{width:90%;margin-bottom:50px;}
+	.illustration{display:block;margin:0 auto 50px;}
 	p{max-width:52%;margin:0 auto 20px;}
 }
 
@@ -156,4 +156,19 @@ table{padding:25px 25px 0;background-color:$white;display:block;display:table;wi
 		}
 		.account-body-table i{margin-right:0px;margin-left:8px;}
 	}
+}
+
+/* ==================== */
+/* === TOOLTIPS === */
+/* ==================== */
+
+.tooltip{display:inline;position:relative;z-index:999;cursor:pointer;
+	.tooltip-content{position:absolute;z-index:9999;width:300px;left:56px;margin:0 0 8px -180px;bottom:100%;text-align:left;background-color:$black;pointer-events:none;-webkit-transform-origin: 50% calc(100% + 10px);transform-origin: 50% calc(100% + 10px);-webkit-transform: perspective(1000px) rotate3d(1,0,0,45deg);transform: perspective(1000px) rotate3d(1,0,0,45deg);-webkit-transition: opacity 0.2s, -webkit-transform 0.2s;transition: opacity 0.2s, transform 0.2s;opacity:0;@include open-light;font-size:13px;line-height:17px;padding:20px;
+	    span{color:$white;}
+	    &::after{content: '';position: absolute;width: 360px;height: 20px;bottom: 100%;left: 50%;pointer-events: none;-webkit-transform: translateX(-50%);transform: translateX(-50%);}
+	}
+	&:hover .tooltip-content{-webkit-transform: perspective(1000px) rotate3d(1,0,0,0deg);transform: perspective(1000px) rotate3d(1,0,0,0deg);pointer-events: auto;opacity: 1;
+		&::after{pointer-events:auto;}
+	}
+	.tooltip-content::after {top: 100%;left: 50%;border: solid transparent;height: 0;width: 0;pointer-events: none;border-color: transparent;border-top-color: $black;;border-width: 10px;margin-left: -10px;}
 }

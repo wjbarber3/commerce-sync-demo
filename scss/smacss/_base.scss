@@ -22,7 +22,7 @@ a{text-decoration:none;}
 /* ============== */
 
 input, textarea{-webkit-appearance:none;resize:none;
-	&:disabled{cursor:not-allowed;}
+	&:disabled{cursor:not-allowed;background-color:$white;}
 }
 
 /* ================== */
@@ -30,7 +30,7 @@ input, textarea{-webkit-appearance:none;resize:none;
 /* ================== */
 
 *{box-sizing:border-box;}
-svg{fill:white;}
+// svg{fill:white;}
 body{width:100vw;height:100vh;background-color:$offblue;padding:90px 25px 25px;}
 .main-wrap{}
 .clearfix{
