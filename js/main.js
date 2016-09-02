@@ -217,4 +217,7 @@ window.onload = function() {
 	Route.init();
 	Page.init();
 	AccountNav.init();
+	window.onpopstate = function(event) {
+        location.reload();
+    };
 };

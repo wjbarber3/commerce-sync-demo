@@ -7,6 +7,9 @@
 }
 
 .page1 {
+	@include bp(md-two){
+		.illustration{width:220px;height:auto;}
+	}
 	@include bp(mobile){
 		p{max-width:95%;text-align:center;}
 		.illustration{margin-bottom:20px;}
